@@ -1,0 +1,70 @@
+export const COMPANY_INFO = {
+  name: "Raymond Hardin Roofing",
+  legalName: "Raymond Hardin Roofing",
+  tagline: "At Raymond Hardin Roofing, we have one goal: Customer Satisfaction.",
+  foundedYear: 1995,
+  experienceYears: 40,
+  startedAge: 17,
+  yearsInBusiness: new Date().getFullYear() - 1995,
+  phoneDisplay: "903-797-2756",
+  phoneHref: "tel:903-797-2756",
+  phoneSecondaryDisplay: "903-790-5693",
+  phoneSecondaryHref: "tel:903-790-5693",
+  phoneE164: "+1-903-797-2756",
+  domain: "https://www.raymondhardin-roofing.com",
+  headquarters: {
+    city: "Gilmer",
+    county: "Upshur County",
+    state: "TX",
+    stateFull: "Texas",
+    zip: "75644",
+    region: "East Texas",
+    latitude: 32.7287,
+    longitude: -94.9424,
+  },
+  hours: {
+    weekdays: "Monday – Saturday: 7:00 AM – 6:00 PM",
+    emergency: "24-Hour Estimate Response • Storm & Leak Priority",
+    schemaOpeningHours: ["Mo-Sa 07:00-18:00"],
+  },
+  corePromise:
+    "Experience matters when you choose a roofer. Raymond Hardin Roofing was established in 1995 as an American family-owned and operated business. Our goal is complete customer satisfaction. We work hard every day to provide each customer with the highest quality service at the best price.",
+  storySummary:
+    "Raymond Hardin has been installing and repairing roofs in East Texas for over 40 years. He learned the trade working for other roofing companies, starting when he was just 17 years old. In 1995, he started Raymond Hardin Roofing to offer the highest quality roofing service in East Texas.",
+  carePromise:
+    "Before we begin any tear-off work, we lay down tarps to control the mess and protect landscaping. During the roofing process, we use a rolling magnet daily to collect stray nails that might injure people or pets, and we replace all turbines, pipes, and stacks to give your entire roof a brand new look.",
+  credentialsSummary:
+    "Raymond Hardin Roofing is licensed, bonded, insured, and is a BBB Accredited Business. We take care of all the necessary permits and work with you when you're waiting for insurance payments.",
+  countiesServed: [
+    "Upshur County",
+    "Gregg County",
+    "Smith County",
+    "Wood County",
+    "Camp County",
+    "Titus County",
+    "Morris County",
+    "Harrison County",
+  ],
+  highlights: [
+    {
+      label: "Free",
+      value: "Free",
+      detail: "Same-Day Inspections",
+    },
+    {
+      label: "40+ Years",
+      value: "40+ Yrs",
+      detail: "East Texas Experience",
+    },
+    {
+      label: "Fully",
+      value: "Fully",
+      detail: "Licensed, Bonded & Insured",
+    },
+    {
+      label: "BBB",
+      value: "BBB",
+      detail: "Accredited Business (Est. 1995)",
+    },
+  ],
+} as const;

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ink, paper, and the RHR logo blue. */
+  --color-ink: #0e0e0e;
+  --color-sun: #284078;
+  --color-sun-hover: #1c305e;
+  --color-paper: #ffffff;
+  --color-sand: #f6f5f2;
+  --color-mist: #e7ebea;
+  --color-muted: #5c5c5c;
+
+  --color-rhr-blue: #0e0e0e;
+  --color-rhr-blue-dark: #0e0e0e;
+  --color-rhr-blue-light: #1a1a1a;
+  --color-rhr-blue-soft: #f6f5f2;
+
+  --color-copper: #284078;
+  --color-copper-hover: #1c305e;
+  --color-copper-light: #e6ebf6;
+  --color-slate-deep: #0e0e0e;
+  --color-iron: #1a1a1a;
+  --color-iron-light: #2a2a2a;
+  --color-limestone: #ffffff;
+  --color-sandstone: #f6f5f2;
+  --color-sandstone-dark: #e7ebea;
+  --color-amber-gold: #284078;
+  --color-amber-soft: #e6ebf6;
+  --color-pine: #0e0e0e;
+  --color-pine-light: #f6f5f2;
+
+  --font-display: var(--font-display-next), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-sans-next), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-sans-next), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #0e0e0e;
+  }
+
+  body {
+    font-family: var(--font-sans-next), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #0e0e0e;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading,
+  .font-display {
+    font-family: var(--font-display-next), "Arial Narrow", sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.btn-sun {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #284078;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.15rem;
+  border-radius: 2px;
+  transition: background-color 150ms ease;
+}
+
+.btn-sun:hover {
+  background: #1c305e;
+}
+
+.btn-ink {
+  background: #0e0e0e;
+}
+
+.btn-ink:hover {
+  background: #2a2a2a;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #0e0e0e;
+}
+
+.kicker::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #284078;
+  flex-shrink: 0;
+}
+
+.leaflet-container {
+  z-index: 0;
+}
+
+.leaflet-div-icon.rhr-pin {
+  background: transparent;
+  border: none;
+}
