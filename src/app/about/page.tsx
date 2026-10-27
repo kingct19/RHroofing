@@ -204,8 +204,16 @@ export default function AboutPage() {
             <a href={COMPANY_INFO.phoneHref} className="inline-flex items-center gap-2">
               <Phone className="h-5 w-5" />
               {COMPANY_INFO.phoneDisplay}
+              <span className="text-sm font-medium text-[#5c5c5c]">{COMPANY_INFO.phoneLabel}</span>
             </a>
-            <a href={COMPANY_INFO.phoneSecondaryHref}>{COMPANY_INFO.phoneSecondaryDisplay}</a>
+            <a href={COMPANY_INFO.phoneSecondaryHref} className="inline-flex items-center gap-2">
+              <Phone className="h-5 w-5" />
+              {COMPANY_INFO.phoneSecondaryDisplay}
+              <span className="text-sm font-medium text-[#5c5c5c]">{COMPANY_INFO.phoneSecondaryLabel}</span>
+            </a>
+            <a href={COMPANY_INFO.emailHref} className="inline-flex items-center gap-2">
+              {COMPANY_INFO.email}
+            </a>
           </div>
           <div className="mt-8">
             <EstimateForm compact variant="card" />

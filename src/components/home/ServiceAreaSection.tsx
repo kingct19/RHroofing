@@ -45,7 +45,10 @@ export function ServiceAreaSection() {
                     className="inline-flex items-center gap-3 font-bold text-[#181617] hover:text-[#0e0e0e] text-lg transition-colors"
                   >
                     <Phone className="w-5 h-5 text-[#0e0e0e] shrink-0" />
-                    <span>(903) 797-2756</span>
+                    <span>
+                      {COMPANY_INFO.phoneDisplay}
+                      <span className="ml-2 text-sm font-medium text-[#5c5c5c]">{COMPANY_INFO.phoneLabel}</span>
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -54,7 +57,10 @@ export function ServiceAreaSection() {
                     className="inline-flex items-center gap-3 font-bold text-[#181617] hover:text-[#0e0e0e] text-lg transition-colors"
                   >
                     <Phone className="w-5 h-5 text-[#0e0e0e] shrink-0" />
-                    <span>(903) 790-5693</span>
+                    <span>
+                      {COMPANY_INFO.phoneSecondaryDisplay}
+                      <span className="ml-2 text-sm font-medium text-[#5c5c5c]">{COMPANY_INFO.phoneSecondaryLabel}</span>
+                    </span>
                   </a>
                 </li>
               </ul>

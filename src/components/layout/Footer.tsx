@@ -53,7 +53,10 @@ export function Footer() {
                   className="inline-flex items-center gap-2 hover:text-[#9aafdf] transition-colors font-semibold"
                 >
                   <Phone className="w-4 h-4 text-[#9aafdf] shrink-0" />
-                  <span>(903) 797-2756</span>
+                  <span>
+                    {COMPANY_INFO.phoneDisplay}
+                    <span className="ml-1.5 font-normal text-white/55">{COMPANY_INFO.phoneLabel}</span>
+                  </span>
                 </a>
               </li>
               <li>
@@ -62,7 +65,19 @@ export function Footer() {
                   className="inline-flex items-center gap-2 hover:text-[#9aafdf] transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#9aafdf] shrink-0" />
-                  <span>(903) 790-5693</span>
+                  <span>
+                    {COMPANY_INFO.phoneSecondaryDisplay}
+                    <span className="ml-1.5 text-white/55">{COMPANY_INFO.phoneSecondaryLabel}</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={COMPANY_INFO.emailHref}
+                  className="inline-flex items-start gap-2 hover:text-[#9aafdf] transition-colors break-all"
+                >
+                  <Mail className="w-4 h-4 text-[#9aafdf] shrink-0 mt-0.5" />
+                  <span>{COMPANY_INFO.email}</span>
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/75">
@@ -219,7 +234,15 @@ export function Footer() {
             </Link>
           </div>
           <div className="text-white/80 shrink-0">
-            Web Design by <strong className="text-white">Studio Sozo</strong>
+            Web Design by{" "}
+            <a
+              href="https://www.studiosozo.dev"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-white hover:underline"
+            >
+              Studio Sozo
+            </a>
           </div>
         </div>
       </div>

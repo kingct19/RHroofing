@@ -18,7 +18,7 @@ export function HeroSection() {
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-5">
             <Link href="/contact" className="btn-sun text-[13px] px-5 py-2.5">
-              Book now
+              Free estimate
             </Link>
             <Link
               href="/services"

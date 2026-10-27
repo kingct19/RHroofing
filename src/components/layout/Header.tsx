@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
@@ -10,6 +10,9 @@ import { SERVICE_AREA_CITIES } from "@/data/serviceAreas";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const hovering = useRef(false);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
@@ -18,11 +21,69 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) setHidden(false);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    lastScrollY.current = window.scrollY;
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+
+      if (mobileMenuOpen || hovering.current || y < 72) {
+        setHidden(false);
+        lastScrollY.current = y;
+        return;
+      }
+
+      const delta = y - lastScrollY.current;
+      if (delta > 8) {
+        setHidden(true);
+        lastScrollY.current = y;
+      } else if (delta < -8) {
+        setHidden(false);
+        lastScrollY.current = y;
+      }
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [mobileMenuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 w-full min-w-0 bg-white border-b border-[#ececec]">
+    <header
+      onMouseEnter={() => {
+        hovering.current = true;
+        setHidden(false);
+      }}
+      onMouseLeave={() => {
+        hovering.current = false;
+      }}
+      className={`sticky top-0 z-50 w-full min-w-0 bg-white border-b border-[#ececec] transition-transform duration-300 ease-out motion-reduce:transition-none ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div className="max-w-[1280px] mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between gap-6 h-[78px]">
-          <Link href="/" className="shrink-0" aria-label="Raymond Hardin Roofing home">
+          <Link
+            href="/"
+            className="shrink-0"
+            aria-label="Raymond Hardin Roofing home"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <img
               src="/images/rhr-logo.jpg"
               alt="Raymond Hardin Roofing"
@@ -37,9 +98,9 @@ export function Header() {
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 Services
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
-              <div className="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all w-64 z-50">
+              <div className="pointer-events-none absolute left-0 top-full z-50 w-64 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
                 <div className="bg-white shadow-xl border border-[#eee] py-2">
                   {ROOFING_SERVICES.map((service) => (
                     <Link
@@ -60,9 +121,9 @@ export function Header() {
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 Repairs
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
-              <div className="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all w-60 z-50">
+              <div className="pointer-events-none absolute left-0 top-full z-50 w-60 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
                 <div className="bg-white shadow-xl border border-[#eee] py-2">
                   {REPAIR_PAGES.map((page) => (
                     <Link
@@ -83,10 +144,10 @@ export function Header() {
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 Service Areas
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all w-[380px] z-50">
-                <div className="bg-white shadow-xl border border-[#eee] p-3 grid grid-cols-2">
+              <div className="absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2">
+                <div className="pointer-events-none translate-y-1 bg-white opacity-0 shadow-xl border border-[#eee] p-3 grid grid-cols-2 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
                   {SERVICE_AREA_CITIES.map((area) => (
                     <Link
                       key={area.slug}
@@ -113,7 +174,7 @@ export function Header() {
 
           <div className="hidden lg:flex items-center gap-2 shrink-0">
             <Link href="/contact" className="btn-sun btn-ink text-[12px] px-4 py-2.5">
-              Book now
+              Free estimate
             </Link>
             <a href={COMPANY_INFO.phoneHref} className="btn-sun text-[12px] px-4 py-2.5">
               (903) 797-2756
@@ -126,18 +187,40 @@ export function Header() {
             </a>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
               className="p-2 text-[#0e0e0e]"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="relative block h-6 w-6">
+                <Menu
+                  className={`absolute inset-0 h-6 w-6 transition duration-300 ease-out motion-reduce:transition-none ${
+                    mobileMenuOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+                  }`}
+                />
+                <X
+                  className={`absolute inset-0 h-6 w-6 transition duration-300 ease-out motion-reduce:transition-none ${
+                    mobileMenuOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+                  }`}
+                />
+              </span>
             </button>
           </div>
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-[#eee] px-5 py-4 max-h-[calc(100dvh-78px-5.5rem)] overflow-y-auto">
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none lg:hidden ${
+          mobileMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div
+            inert={!mobileMenuOpen}
+            className={`max-h-[calc(100dvh-78px-5.5rem)] overflow-y-auto border-t border-[#eee] bg-white px-5 py-4 transition duration-300 ease-out motion-reduce:transition-none ${
+              mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+            }`}
+          >
           <div className="text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">Services</div>
           {ROOFING_SERVICES.map((service) => (
             <Link
@@ -184,8 +267,9 @@ export function Header() {
               Book an inspection
             </Link>
           </div>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -38,6 +38,22 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
       ? `${COMPANY_INFO.domain}/service-areas/${cityOverride.slug}`
       : COMPANY_INFO.domain,
     telephone: COMPANY_INFO.phoneE164,
+    email: COMPANY_INFO.email,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: COMPANY_INFO.phoneE164,
+        contactType: "customer service",
+        email: COMPANY_INFO.email,
+        areaServed: "US",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: COMPANY_INFO.phoneSecondaryE164,
+        contactType: "mobile",
+        areaServed: "US",
+      },
+    ],
     foundingDate: `${COMPANY_INFO.foundedYear}`,
     priceRange: "$$",
     slogan: COMPANY_INFO.tagline,

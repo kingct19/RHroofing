@@ -92,7 +92,10 @@ export function EastTexasPinMap() {
   }, []);
 
   return (
-    <div className="relative z-0 bg-white rounded-[5px] shadow-md border border-slate-200 overflow-hidden">
+    <div
+      data-map
+      className="relative z-0 bg-white rounded-[5px] shadow-md border border-slate-200 overflow-hidden"
+    >
       <div ref={frameRef} className="z-0 h-[390px] w-full bg-[#e7ebea]" />
     </div>
   );

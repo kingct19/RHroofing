@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Phone,
+  Mail,
   MapPin,
   Clock,
   CheckCircle2,
@@ -40,7 +41,7 @@ export default function ContactPage() {
       />
 
       <PageIntro kicker="Contact" title="Contact us today">
-        Call {COMPANY_INFO.phoneDisplay} or send a few details. We will talk through a shingle, metal, torch-down, or repair visit and schedule the inspection.
+        Call {COMPANY_INFO.phoneDisplay} ({COMPANY_INFO.phoneLabel.toLowerCase()}) or {COMPANY_INFO.phoneSecondaryDisplay} ({COMPANY_INFO.phoneSecondaryLabel.toLowerCase()}), or email {COMPANY_INFO.email}.
       </PageIntro>
 
       {/* Contact Body */}
@@ -69,10 +70,40 @@ export default function ContactPage() {
                   <Phone className="w-7 h-7 shrink-0" />
                   <div>
                     <div className="text-[11px] font-mono uppercase tracking-wider opacity-90">
-                      Click to Call Now
+                      {COMPANY_INFO.phoneLabel}
                     </div>
                     <div className="font-mono text-2xl font-bold">
                       {COMPANY_INFO.phoneDisplay}
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href={COMPANY_INFO.phoneSecondaryHref}
+                  className="flex items-center gap-4 rounded-lg border border-white/15 p-4 text-white transition-colors hover:bg-white/10"
+                >
+                  <Phone className="w-7 h-7 shrink-0" />
+                  <div>
+                    <div className="text-[11px] font-mono uppercase tracking-wider opacity-90">
+                      {COMPANY_INFO.phoneSecondaryLabel}
+                    </div>
+                    <div className="font-mono text-2xl font-bold">
+                      {COMPANY_INFO.phoneSecondaryDisplay}
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href={COMPANY_INFO.emailHref}
+                  className="flex items-center gap-4 rounded-lg border border-white/15 p-4 text-white transition-colors hover:bg-white/10"
+                >
+                  <Mail className="w-7 h-7 shrink-0" />
+                  <div>
+                    <div className="text-[11px] font-mono uppercase tracking-wider opacity-90">
+                      Email
+                    </div>
+                    <div className="text-base font-bold break-all">
+                      {COMPANY_INFO.email}
                     </div>
                   </div>
                 </a>
