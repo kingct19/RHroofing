@@ -54,9 +54,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: COMPANY_INFO.domain,
     siteName: COMPANY_INFO.name,
-    title: "Raymond Hardin Roofing | Gilmer & East Texas's Most Trusted Roofer",
+    title: "Reputation and experience you can trust.",
     description:
-      "Family-owned in Gilmer, TX since 1995. Professional residential & commercial shingle, metal, and torch-down rubber roofs, tear-offs, re-decks, and repairs across East Texas.",
+      "Family-owned in Gilmer since 1995. Shingle, metal, and torch-down rubber roofs, tear-offs, and repairs across East Texas.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reputation and experience you can trust.",
+    description:
+      "Family-owned in Gilmer since 1995. Shingle, metal, and torch-down rubber roofs, tear-offs, and repairs across East Texas.",
   },
   alternates: {
     canonical: "/",
