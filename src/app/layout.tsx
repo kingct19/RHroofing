@@ -24,8 +24,14 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+const metadataBase = new URL(
+  process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : COMPANY_INFO.domain,
+);
+
 export const metadata: Metadata = {
-  metadataBase: new URL(COMPANY_INFO.domain),
+  metadataBase,
   title: {
     default:
       "Gilmer, TX - Raymond Hardin Roofing | East Texas's Most Trusted Roofer Since 1995",
@@ -52,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: COMPANY_INFO.domain,
+    url: metadataBase.origin,
     siteName: COMPANY_INFO.name,
     title: "Reputation and experience you can trust.",
     description:
