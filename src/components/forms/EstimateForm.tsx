@@ -89,6 +89,12 @@ export function EstimateForm({
           Thank you, <strong>{name}</strong>. Our Gilmer team has received your request for a{" "}
           <strong>{roofService}</strong> inspection in <strong>{city}, TX</strong>. We will call you at{" "}
           <span className="font-bold">{phone}</span> shortly.
+          {email ? (
+            <>
+              {" "}
+              A confirmation is on its way to <strong>{email}</strong>.
+            </>
+          ) : null}
         </p>
         <div className="pt-3 border-t border-white/15 text-xs text-white/80 flex items-center justify-between">
           <span>Need immediate assistance?</span>
