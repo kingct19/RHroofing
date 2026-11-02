@@ -1,19 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { CheckCircle2, Star, HardHat } from "lucide-react";
+import { CheckCircle2, HardHat } from "lucide-react";
 import { HeroSection } from "@/components/home/HeroSection";
 import { IntroCarousel } from "@/components/home/IntroCarousel";
 import { RoofingSystemsSection } from "@/components/home/RoofingSystemsSection";
 import { ServiceAreaSection } from "@/components/home/ServiceAreaSection";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { EstimateForm } from "@/components/forms/EstimateForm";
-import { GoogleGIcon } from "@/components/ui/TrustLogos";
+import { GoogleReviewQr } from "@/components/ui/GoogleReviewQr";
+import { GoogleReviewCarousel } from "@/components/home/GoogleReviewCarousel";
 import {
   JsonLd,
   buildLocalBusinessSchema,
   buildFAQSchema,
 } from "@/components/seo/JsonLd";
-import { GOOGLE_REVIEWS, GOOGLE_REVIEWS_URL } from "@/data/testimonials";
+import { GOOGLE_REVIEW_SUMMARY, GOOGLE_REVIEWS_URL } from "@/data/testimonials";
 
 const WORK_PHOTOS = [
   { src: "/images/rhr/slider-img2.png", title: "Shingle roof" },
@@ -238,36 +239,9 @@ export default function HomePage() {
           <h2 className="text-center font-display text-[44px] sm:text-[60px] font-bold leading-[0.95] tracking-[-0.03em] text-[#0e0e0e]">
             Real customers. Real experiences.
           </h2>
-          <p className="mt-4 text-center text-[#5c5c5c]">
-            4.6 from 5 Google reviews
-          </p>
+          <p className="mt-4 text-center text-[#5c5c5c]">{GOOGLE_REVIEW_SUMMARY}</p>
 
-          <div className="mx-auto mt-12 grid max-w-[760px] grid-cols-1 gap-5 md:grid-cols-2">
-            {GOOGLE_REVIEWS.map((review) => (
-              <article
-                key={review.id}
-                className="flex min-h-[280px] flex-col rounded-md border border-[#e6e6e6] bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex text-[#f7c906]" aria-label={`${review.rating} stars`}>
-                    {Array.from({ length: review.rating }).map((_, index) => (
-                      <Star key={index} className="h-4 w-4 fill-[#f7c906]" />
-                    ))}
-                  </div>
-                  {review.date ? (
-                    <span className="text-xs text-[#8a8a8a]">{review.date}</span>
-                  ) : null}
-                </div>
-                <p className="mt-4 line-clamp-6 text-[15px] leading-relaxed text-[#3a3a3a]">
-                  {review.quote}
-                </p>
-                <div className="mt-auto flex items-center justify-between pt-6">
-                  <span className="font-semibold text-[#0e0e0e]">{review.author}</span>
-                  {review.date ? <GoogleGIcon className="h-5 w-5" /> : null}
-                </div>
-              </article>
-            ))}
-          </div>
+          <GoogleReviewCarousel />
 
           <div className="mt-10 flex justify-center">
             <a
@@ -279,6 +253,7 @@ export default function HomePage() {
               More reviews
             </a>
           </div>
+          <GoogleReviewQr />
         </div>
       </section>
 

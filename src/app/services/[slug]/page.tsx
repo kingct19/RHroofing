@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Phone, Star } from "lucide-react";
+import { Phone } from "lucide-react";
 import {
   ROOFING_SERVICES,
   getServiceBySlug,
@@ -11,8 +11,9 @@ import {
 import { COMPANY_INFO } from "@/data/company";
 import { EstimateForm } from "@/components/forms/EstimateForm";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
-import { GoogleGIcon } from "@/components/ui/TrustLogos";
-import { GOOGLE_REVIEWS, GOOGLE_REVIEWS_URL } from "@/data/testimonials";
+import { GoogleReviewQr } from "@/components/ui/GoogleReviewQr";
+import { GoogleReviewCarousel } from "@/components/home/GoogleReviewCarousel";
+import { GOOGLE_REVIEW_SUMMARY, GOOGLE_REVIEWS_URL } from "@/data/testimonials";
 import {
   JsonLd,
   buildServiceSchema,
@@ -205,30 +206,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <h2 className="text-center font-display text-[40px] sm:text-[52px] font-bold leading-[0.95] tracking-[-0.03em]">
             Real customers. Real experiences.
           </h2>
-          <div className="mx-auto mt-10 grid max-w-[760px] grid-cols-1 gap-5 md:grid-cols-2">
-            {GOOGLE_REVIEWS.map((review) => (
-              <article key={review.id} className="flex min-h-[240px] flex-col rounded-md border border-[#e6e6e6] bg-white p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex text-[#f7c906]" aria-label={`${review.rating} stars`}>
-                    {Array.from({ length: review.rating }).map((_, index) => (
-                      <Star key={index} className="h-4 w-4 fill-[#f7c906]" />
-                    ))}
-                  </div>
-                  {review.date ? <span className="text-xs text-[#8a8a8a]">{review.date}</span> : null}
-                </div>
-                <p className="mt-4 line-clamp-6 text-[15px] leading-relaxed text-[#3a3a3a]">{review.quote}</p>
-                <div className="mt-auto flex items-center justify-between pt-6">
-                  <span className="font-semibold">{review.author}</span>
-                  {review.date ? <GoogleGIcon className="h-5 w-5" /> : null}
-                </div>
-              </article>
-            ))}
-          </div>
+          <p className="mt-4 text-center text-[#5c5c5c]">{GOOGLE_REVIEW_SUMMARY}</p>
+          <GoogleReviewCarousel />
           <div className="mt-8 text-center">
             <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noreferrer" className="rounded-full border border-[#0e0e0e] px-6 py-2.5 text-sm font-semibold">
               More reviews
             </a>
           </div>
+          <GoogleReviewQr />
         </div>
       </section>
 

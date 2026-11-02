@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Raymond Hardin Roofing business card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: 3.75in 2.25in;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: #ffffff;
+      }
+
+      .card {
+        width: 3.75in;
+        height: 2.25in;
+        position: relative;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .card:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .safe {
+        position: absolute;
+        inset: 0.25in;
+      }
+
+      .front {
+        background: #f6f3ec;
+        color: #1a2744;
+      }
+
+      .front .safe {
+        display: grid;
+        grid-template-columns: 1.15in 1fr;
+        gap: 0.16in;
+        align-items: center;
+      }
+
+      .mark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.06in;
+      }
+
+      .mark svg {
+        width: 1.05in;
+        height: auto;
+      }
+
+      .since {
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 7pt;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #5e6570;
+      }
+
+      .name {
+        font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+        font-weight: 700;
+        font-size: 20pt;
+        line-height: 0.88;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+
+      .trade {
+        margin-top: 0.03in;
+        font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+        font-weight: 600;
+        font-size: 11pt;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #1e3a66;
+      }
+
+      .place {
+        margin-top: 0.06in;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #5e6570;
+      }
+
+      .phones {
+        margin-top: 0.1in;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 9.5pt;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .phones span {
+        font-weight: 500;
+        color: #5e6570;
+      }
+
+      .links {
+        margin-top: 0.08in;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 7.5pt;
+        line-height: 1.4;
+        color: #1a2744;
+      }
+
+      .back {
+        background: #1e3a66;
+        color: #f6f3ec;
+      }
+
+      .back .safe {
+        display: grid;
+        grid-template-columns: 1fr 1.28in;
+        gap: 0.14in;
+        align-items: center;
+      }
+
+      .eyebrow {
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 7.5pt;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #c5d0e4;
+      }
+
+      .ask {
+        margin-top: 0.06in;
+        font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+        font-weight: 700;
+        font-size: 22pt;
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+
+      .hint {
+        margin-top: 0.08in;
+        max-width: 1.7in;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        line-height: 1.35;
+        color: #d5deec;
+      }
+
+      .qr {
+        width: 1.28in;
+        height: 1.28in;
+        background: #ffffff;
+        padding: 0.06in;
+      }
+
+      .qr img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card front">
+      <div class="safe">
+        <div class="mark">
+          <svg viewBox="0 0 180 110" fill="none" aria-hidden="true">
+            <path d="M34 58V34H48V45" stroke="#204070" stroke-width="7" stroke-linecap="square" />
+            <line x1="31" y1="32" x2="51" y2="32" stroke="#204070" stroke-width="5" />
+            <path d="M8 82L90 14L154 67" stroke="#204070" stroke-width="10" stroke-linecap="butt" stroke-linejoin="miter" />
+            <path d="M115 30L138 12L174 44" stroke="#204070" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter" />
+            <text
+              x="90"
+              y="104"
+              text-anchor="middle"
+              fill="#204070"
+              font-family="Montserrat, Arial, sans-serif"
+              font-weight="800"
+              font-size="34"
+              letter-spacing="-2"
+            >
+              ЯHR
+            </text>
+          </svg>
+          <div class="since">Est. 1995</div>
+        </div>
+        <div>
+          <div class="name">Raymond<br />Hardin</div>
+          <div class="trade">Roofing</div>
+          <div class="place">Gilmer, Texas</div>
+          <div class="phones">
+            903-797-2756 <span>work</span><br />
+            903-790-5693 <span>cell</span>
+          </div>
+          <div class="links">
+            raymondhardinroofing@yahoo.com<br />
+            raymondhardin-roofing.com
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card back">
+      <div class="safe">
+        <div>
+          <div class="eyebrow">Raymond Hardin Roofing</div>
+          <div class="ask">Leave a<br />Google<br />review</div>
+          <p class="hint">Scan this code with your phone camera.</p>
+        </div>
+        <div class="qr">
+          <img src="../public/images/google-review-qr.png" alt="QR code for a Google review" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

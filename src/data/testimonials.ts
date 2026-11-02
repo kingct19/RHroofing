@@ -14,9 +14,20 @@ export interface CustomerReview {
 export const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Raymond+Hardin+Roofing+Co+Gilmer+TX";
 
+/** Opens Google's write-a-review form for the Gilmer listing. */
+export const GOOGLE_REVIEW_URL = "https://g.page/r/CZd3eVWY0G6fEAE/review";
+
 /**
- * Google reviews whose full text is visible on the Gilmer listing.
- * The listing itself is 4.6 from 5 reviews.
+ * Same review form as GOOGLE_REVIEW_URL, with the tracking parameters
+ * Google embedded in the official business-profile QR.
+ */
+export const GOOGLE_REVIEW_QR_URL =
+  "https://g.page/r/CZd3eVWY0G6fEAE/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr";
+
+/**
+ * Reviews visible across the two Google listings for Raymond Hardin Roofing.
+ * Quotes are included only when the review text was visible. Rating-only
+ * cards stay quote-free so we do not invent a comment.
  */
 export const GOOGLE_REVIEWS: CustomerReview[] = [
   {
@@ -41,9 +52,80 @@ export const GOOGLE_REVIEWS: CustomerReview[] = [
     date: "7 years ago",
     highlight: "",
     quote:
-      "Amazing company. Whole crew did an amazing job on our new roof. Definitely recommend!",
+      "Amazing company. Whole crew did an amazing job on our new roof. Definitely recommend!!",
+  },
+  {
+    id: "google-donald-dunn",
+    author: "Donald Dunn",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 4,
+    date: "7 years ago",
+    highlight: "",
+    quote: "The number shown here is the Sheriif Office Could not find a phone #",
+  },
+  {
+    id: "google-kenneth-mccoy",
+    author: "Kenneth McCoy",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 5,
+    date: "Jun 27, 2024",
+    highlight: "",
+    quote: "",
+  },
+  {
+    id: "google-evell-gutierrez",
+    author: "Evell Gutierrez",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 5,
+    date: "Jan 10, 2022",
+    highlight: "",
+    quote: "",
+  },
+  {
+    id: "google-rashad-smith",
+    author: "Rashad Smith",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 5,
+    date: "Aug 25, 2021",
+    highlight: "",
+    quote: "",
+  },
+  {
+    id: "google-ben-gage",
+    author: "Ben Gage",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 5,
+    date: "2 years ago",
+    highlight: "",
+    quote: "",
+  },
+  {
+    id: "google-john-nation",
+    author: "John Nation",
+    town: "",
+    county: "",
+    serviceProvided: "",
+    rating: 5,
+    date: "7 years ago",
+    highlight: "",
+    quote: "",
   },
 ];
+
+const googleReviewRatingTotal = GOOGLE_REVIEWS.reduce((sum, review) => sum + review.rating, 0);
+
+/** Average of the reviews above, rounded the way a one-decimal rating is shown. */
+export const GOOGLE_REVIEW_SUMMARY = `${(googleReviewRatingTotal / GOOGLE_REVIEWS.length).toFixed(1)} from ${GOOGLE_REVIEWS.length} Google reviews`;
 
 /**
  * Customer reviews published on raymondhardin-roofing.com/about.

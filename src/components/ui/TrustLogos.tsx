@@ -251,7 +251,7 @@ export function HeroReviewStack() {
     <div className="flex flex-col gap-9">
       <ReviewMark
         icon={<GoogleGIcon className="w-9 h-9" />}
-        score="4.6"
+        score="4.9"
         caption="Google reviews"
       />
       <ReviewMark
