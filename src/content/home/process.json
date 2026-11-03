@@ -1,0 +1,23 @@
+{
+  "kicker": "How it works",
+  "title": "What you can expect",
+  "body": "Three steps from the first call to a written price. Nothing starts until you say so.",
+  "linkLabel": "Book a free inspection >",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Talk with us",
+      "body": "Call or send the form. We answer questions and set the inspection."
+    },
+    {
+      "step": "02",
+      "title": "We show up on time",
+      "body": "Same-day or next-day visits across Gilmer and the towns around it."
+    },
+    {
+      "step": "03",
+      "title": "A clear recommendation",
+      "body": "Options and a written price before any work starts. Nothing extra."
+    }
+  ]
+}

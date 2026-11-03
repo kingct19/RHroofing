@@ -1,0 +1,30 @@
+{
+  "title": "East Texas roofing, done right",
+  "button": "See how we can help",
+  "cards": [
+    {
+      "title": "Shingle Roofing",
+      "slug": "shingle-roofing",
+      "imageUrl": "/images/rhr/shingle-page.jpg",
+      "description": "Three-tab and architectural shingles, with turbines, pipes, and stacks replaced so the roof looks finished."
+    },
+    {
+      "title": "Metal Roofing",
+      "slug": "metal-roofing",
+      "imageUrl": "/images/rhr/metal-page.jpg",
+      "description": "Long-lasting metal in a range of colors that sheds East Texas heat and holds up for decades."
+    },
+    {
+      "title": "Torch-Down Rubber",
+      "slug": "torch-down-rubber-roofing",
+      "imageUrl": "/images/rhr/flat-1.jpg",
+      "description": "A sealed asphalt-and-rubber system for flat and low-pitch roofs, without the smell of hot tar."
+    },
+    {
+      "title": "Repair & Re-Decks",
+      "slug": "roof-repair-and-redecks",
+      "imageUrl": "/images/rhr/repair-page.jpg",
+      "description": "Storm inspections, leak repairs, tear-offs, and structural re-decks, with tarps and a daily magnet sweep."
+    }
+  ]
+}

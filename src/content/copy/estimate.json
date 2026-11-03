@@ -1,0 +1,43 @@
+{
+  "title": "Book a free inspection",
+  "namePlaceholder": "Full Name *",
+  "phonePlaceholder": "Phone Number *",
+  "emailPlaceholder": "Email Address",
+  "detailsPlaceholder": "How can we help with your roof?",
+  "otherArea": "Other Surrounding Area",
+  "residential": "Residential Property",
+  "commercial": "Commercial Building",
+  "services": [
+    {
+      "value": "Free Roof Inspection",
+      "label": "Free Same-Day / Next-Day Roof Inspection"
+    },
+    {
+      "value": "Shingle Roof Replacement",
+      "label": "Shingle Roof Replacement or Install"
+    },
+    {
+      "value": "Metal Roof Installation",
+      "label": "Metal Roof (Standing Seam / R-Panel)"
+    },
+    {
+      "value": "Torch-Down Rubber Roof",
+      "label": "Torch-Down Rubber (Flat / Low-Slope Roof)"
+    },
+    {
+      "value": "Roof Repair / Leak Fix",
+      "label": "Roof Repair / Storm Damage"
+    },
+    {
+      "value": "Tear-Off & Structural Re-Deck",
+      "label": "Full Tear-Off & Structural Re-Deck"
+    }
+  ],
+  "consent": "By submitting this form, you agree to be contacted by Raymond Hardin Roofing regarding your free roof inspection at the phone number provided.",
+  "submit": "Get My Free Inspection",
+  "submitting": "Submitting...",
+  "successTitle": "Inspection Request Received!",
+  "successBody": "Thank you, {name}. Our Gilmer team has received your request for a {service} inspection in {city}, TX. We will call you at {phone} shortly.",
+  "successEmail": "A confirmation is on its way to {email}.",
+  "immediateHelp": "Need immediate assistance?"
+}

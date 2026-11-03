@@ -1,0 +1,8 @@
+{
+  "title": "Leave a Google review",
+  "body": "Scan this code with a phone camera. It opens the Google review form. Download the same image for a business card, invoice, or text.",
+  "writeLabel": "Write a review",
+  "downloadLabel": "Download QR",
+  "image": "/images/google-review-qr.png",
+  "imageAlt": "QR code that opens the Google review form for Raymond Hardin Roofing"
+}

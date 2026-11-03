@@ -1,0 +1,165 @@
+{
+  "reviews": [
+    {
+      "id": "google-susan-mccoy",
+      "author": "Susan McCoy",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "7 years ago",
+      "highlight": "",
+      "quote": "Great work and clean up afterwards, no better roofer. I highly recommend Raymond Hardin for any job. And he beat everyone else's prices."
+    },
+    {
+      "id": "google-cheryl-spencer",
+      "author": "Cheryl Spencer",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "7 years ago",
+      "highlight": "",
+      "quote": "Amazing company. Whole crew did an amazing job on our new roof. Definitely recommend!!"
+    },
+    {
+      "id": "google-donald-dunn",
+      "author": "Donald Dunn",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 4,
+      "date": "7 years ago",
+      "highlight": "",
+      "quote": "The number shown here is the Sheriif Office Could not find a phone #"
+    },
+    {
+      "id": "google-kenneth-mccoy",
+      "author": "Kenneth McCoy",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "Jun 27, 2024",
+      "highlight": "",
+      "quote": ""
+    },
+    {
+      "id": "google-evell-gutierrez",
+      "author": "Evell Gutierrez",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "Jan 10, 2022",
+      "highlight": "",
+      "quote": ""
+    },
+    {
+      "id": "google-rashad-smith",
+      "author": "Rashad Smith",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "Aug 25, 2021",
+      "highlight": "",
+      "quote": ""
+    },
+    {
+      "id": "google-ben-gage",
+      "author": "Ben Gage",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "2 years ago",
+      "highlight": "",
+      "quote": ""
+    },
+    {
+      "id": "google-john-nation",
+      "author": "John Nation",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "7 years ago",
+      "highlight": "",
+      "quote": ""
+    }
+  ],
+  "eastTexasReviews": [
+    {
+      "id": "rev-kathy",
+      "author": "Kathy P.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Not as much as a nail was found on the ground when they were gone",
+      "quote": "Raymond Hardin and his crew roofed my house and did a great job. They took off the old shingles, replaced boards and trim, and put on new shingles, plus a new top on my patio. After all of this, they built me a new garage. They are all very kind, and they cleaned up everything. Not as much as a nail was found on the ground when they were gone. This is a good group of guys you can depend on to do a great job."
+    },
+    {
+      "id": "rev-grigor",
+      "author": "Grigor W.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Everyone from the front office to the workers was friendly and efficient",
+      "quote": "Great people, great company. Everyone from the front office, to the rep, to the workers was friendly, helpful, and efficient. The work was done quickly and efficiently. And the workers themselves were great—very nice guys. And they cleaned up everything perfectly."
+    },
+    {
+      "id": "rev-christian",
+      "author": "Christian N.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Whether it's metal or shingles, they can do it all",
+      "quote": "Best roofing company in East Texas. Whether it's metal or shingles, they can do it all!!!"
+    },
+    {
+      "id": "rev-gypsyrae",
+      "author": "GypsyRae D.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Most honest, hard-working team I've found",
+      "quote": "Most honest, hard-working team I've found. Definitely a 5-star company."
+    },
+    {
+      "id": "rev-susan-t",
+      "author": "Susan T.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Hard-working and get the job done right",
+      "quote": "It's an upstanding bunch of men that work here. Hard-working and get the job done right."
+    },
+    {
+      "id": "rev-patrick",
+      "author": "Patrick N.",
+      "town": "",
+      "county": "",
+      "serviceProvided": "",
+      "rating": 5,
+      "date": "",
+      "highlight": "Does the best job around East Texas",
+      "quote": "Great work. Would recommend to anyone. Does best job around East Texas."
+    }
+  ],
+  "title": "Real customers. Real experiences.",
+  "moreLabel": "More reviews",
+  "googleReviewsUrl": "https://www.google.com/maps/search/?api=1&query=Raymond+Hardin+Roofing+Co+Gilmer+TX",
+  "googleReviewUrl": "https://g.page/r/CZd3eVWY0G6fEAE/review",
+  "googleReviewQrUrl": "https://g.page/r/CZd3eVWY0G6fEAE/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr"
+}

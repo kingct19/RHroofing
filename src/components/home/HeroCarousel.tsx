@@ -4,25 +4,7 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
-
-const SLIDES = [
-  {
-    src: "/images/rhr/slider-img1.png",
-    alt: "Standing-seam metal roof on an East Texas home",
-  },
-  {
-    src: "/images/rhr/slider-img2.png",
-    alt: "Raymond Hardin Roofing crew installing a residential roof",
-  },
-  {
-    src: "/images/rhr/slider-img3.png",
-    alt: "Architectural shingle roof in Gilmer, Texas",
-  },
-  {
-    src: "/images/rhr/slider-img4.png",
-    alt: "Completed Raymond Hardin Roofing project",
-  },
-];
+import { HOME } from "@/data/sections";
 
 /**
  * Full-bleed hero using the shadcn carousel engine (Embla) plus its autoplay
@@ -38,7 +20,7 @@ export function HeroCarousel() {
     <div className="absolute inset-0">
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
-          {SLIDES.map((slide) => (
+          {HOME.heroSlides.map((slide) => (
             <div key={slide.src} className="relative h-full min-w-0 flex-[0_0_100%]">
               <img
                 src={slide.src}

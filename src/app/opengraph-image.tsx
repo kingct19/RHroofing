@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { COMPANY_INFO } from "@/data/company";
 
 export const runtime = "nodejs";
 export const alt =
@@ -14,7 +15,7 @@ export default async function OpenGraphImage() {
   const [display, sans, logo] = await Promise.all([
     readFile(join(process.cwd(), "src/assets/og/BarlowCondensed-Bold.ttf")),
     readFile(join(process.cwd(), "src/assets/og/Inter-Regular.ttf")),
-    readFile(join(process.cwd(), "public/images/rhr-logo.jpg")),
+    readFile(join(process.cwd(), "public", COMPANY_INFO.logo.replace(/^\//, ""))),
   ]);
 
   return new ImageResponse(

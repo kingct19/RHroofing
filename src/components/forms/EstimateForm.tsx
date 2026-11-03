@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 import { SERVICE_AREA_CITIES } from "@/data/serviceAreas";
+import { PAGES } from "@/data/sections";
+
+const formCopy = PAGES.estimate;
 
 interface EstimateFormProps {
   defaultCity?: string;
@@ -18,7 +21,7 @@ interface EstimateFormProps {
  * as well as an interior page card variant.
  */
 export function EstimateForm({
-  defaultCity = "Gilmer",
+  defaultCity = COMPANY_INFO.headquarters.city,
   defaultService = "Shingle Roof",
   compact = false,
   variant = "hero-dark",
@@ -71,7 +74,7 @@ export function EstimateForm({
       setErrorMessage(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please call (903) 797-2756."
+          : `Something went wrong. Please call ${COMPANY_INFO.phoneDisplay}.`
       );
     }
   }
@@ -83,27 +86,28 @@ export function EstimateForm({
           <CheckCircle2 className="w-7 h-7" />
         </div>
         <h3 className="text-2xl font-bold text-[#0e0e0e]">
-          Inspection Request Received!
+          {formCopy.successTitle}
         </h3>
         <p className="text-sm text-[#3a3a3a] leading-relaxed">
-          Thank you, <strong>{name}</strong>. Our Gilmer team has received your request for a{" "}
-          <strong>{roofService}</strong> inspection in <strong>{city}, TX</strong>. We will call you at{" "}
-          <span className="font-bold">{phone}</span> shortly.
+          <FilledCopy
+            template={formCopy.successBody}
+            values={{ name, service: roofService, city, phone }}
+          />
           {email ? (
             <>
               {" "}
-              A confirmation is on its way to <strong>{email}</strong>.
+              <FilledCopy template={formCopy.successEmail} values={{ email }} />
             </>
           ) : null}
         </p>
         <div className="pt-3 border-t border-white/15 text-xs text-white/80 flex items-center justify-between">
-          <span>Need immediate assistance?</span>
+          <span>{formCopy.immediateHelp}</span>
           <a
             href={COMPANY_INFO.phoneHref}
             className="inline-flex items-center gap-1.5 font-bold text-white hover:underline"
           >
             <Phone className="w-3.5 h-3.5" />
-            (903) 797-2756
+            {COMPANY_INFO.phoneDisplay}
           </a>
         </div>
       </div>
@@ -121,7 +125,7 @@ export function EstimateForm({
       }
     >
       <h2 className="font-display text-3xl uppercase leading-none text-[#0e0e0e] mb-5">
-        Book a free inspection
+        {formCopy.title}
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-3.5">
@@ -131,8 +135,8 @@ export function EstimateForm({
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Full Name *"
-            aria-label="Full Name"
+            placeholder={formCopy.namePlaceholder}
+            aria-label={formCopy.namePlaceholder}
             className="w-full px-4 py-3 bg-white border border-[#d9d9d9] text-[#0e0e0e] placeholder:text-[#8a8a8a] text-base focus:outline-none focus:border-[#0e0e0e]"
           />
         </div>
@@ -143,16 +147,16 @@ export function EstimateForm({
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Phone Number *"
-            aria-label="Phone Number"
+            placeholder={formCopy.phonePlaceholder}
+            aria-label={formCopy.phonePlaceholder}
             className="w-full px-4 py-3 bg-white border border-[#d9d9d9] text-[#0e0e0e] placeholder:text-[#8a8a8a] text-base focus:outline-none focus:border-[#0e0e0e]"
           />
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Address"
-            aria-label="Email Address"
+            placeholder={formCopy.emailPlaceholder}
+            aria-label={formCopy.emailPlaceholder}
             className="w-full px-4 py-3 bg-white border border-[#d9d9d9] text-[#0e0e0e] placeholder:text-[#8a8a8a] text-base focus:outline-none focus:border-[#0e0e0e]"
           />
         </div>
@@ -170,7 +174,7 @@ export function EstimateForm({
               </option>
             ))}
             <option value="Other East Texas Area" className="bg-[#181617] text-white">
-              Other Surrounding Area
+              {formCopy.otherArea}
             </option>
           </select>
 
@@ -183,10 +187,10 @@ export function EstimateForm({
             className="w-full px-4 py-3 bg-white border border-[#d9d9d9] text-[#0e0e0e] text-base focus:outline-none focus:border-[#0e0e0e]"
           >
             <option value="Residential" className="bg-[#181617] text-white">
-              Residential Property
+              {formCopy.residential}
             </option>
             <option value="Commercial" className="bg-[#181617] text-white">
-              Commercial Building
+              {formCopy.commercial}
             </option>
           </select>
         </div>
@@ -198,24 +202,11 @@ export function EstimateForm({
             aria-label="Service Needed"
             className="w-full px-4 py-3 bg-white border border-[#d9d9d9] text-[#0e0e0e] text-base focus:outline-none focus:border-[#0e0e0e]"
           >
-            <option value="Free Roof Inspection" className="bg-[#181617] text-white">
-              Free Same-Day / Next-Day Roof Inspection
-            </option>
-            <option value="Shingle Roof Replacement" className="bg-[#181617] text-white">
-              Shingle Roof Replacement or Install
-            </option>
-            <option value="Metal Roof Installation" className="bg-[#181617] text-white">
-              Metal Roof (Standing Seam / R-Panel)
-            </option>
-            <option value="Torch-Down Rubber Roof" className="bg-[#181617] text-white">
-              Torch-Down Rubber (Flat / Low-Slope Roof)
-            </option>
-            <option value="Roof Repair / Leak Fix" className="bg-[#181617] text-white">
-              Roof Repair / Storm Damage
-            </option>
-            <option value="Tear-Off & Structural Re-Deck" className="bg-[#181617] text-white">
-              Full Tear-Off & Structural Re-Deck
-            </option>
+            {formCopy.services.map((service) => (
+              <option key={service.value} value={service.value} className="bg-[#181617] text-white">
+                {service.label}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -225,14 +216,14 @@ export function EstimateForm({
               rows={2}
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              placeholder="How can we help with your roof?"
+              placeholder={formCopy.detailsPlaceholder}
               className="w-full px-4 py-2.5 bg-white border border-[#d9d9d9] text-[#0e0e0e] placeholder:text-[#8a8a8a] text-base focus:outline-none focus:border-[#0e0e0e]"
             />
           </div>
         )}
 
         <p className="text-[11px] text-[#5c5c5c] leading-snug">
-          By submitting this form, you agree to be contacted by Raymond Hardin Roofing regarding your free roof inspection at the phone number provided.
+          {formCopy.consent}
         </p>
 
         {status === "error" && (
@@ -247,11 +238,33 @@ export function EstimateForm({
           className="btn-sun w-full text-sm disabled:opacity-60 cursor-pointer"
         >
           <span>
-            {status === "submitting" ? "Submitting..." : "Get My Free Inspection"}
+            {status === "submitting" ? formCopy.submitting : formCopy.submit}
           </span>
           <ArrowRight className="w-5 h-5" />
         </button>
       </form>
     </div>
+  );
+}
+
+function FilledCopy({
+  template,
+  values,
+}: {
+  template: string;
+  values: Record<string, string>;
+}) {
+  const parts = template.split(/(\{\w+\})/g);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        const token = part.match(/^\{(\w+)\}$/);
+        if (!token) return <span key={index}>{part}</span>;
+        const value = values[token[1]];
+        if (!value) return null;
+        return <strong key={index}>{value}</strong>;
+      })}
+    </>
   );
 }

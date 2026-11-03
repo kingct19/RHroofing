@@ -1,36 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
-const RHR_SERVICES_CARDS = [
-  {
-    title: "Shingle Roofing",
-    slug: "shingle-roofing",
-    imageUrl: "/images/rhr/shingle-page.jpg",
-    description:
-      "Three-tab and architectural shingles, with turbines, pipes, and stacks replaced so the roof looks finished.",
-  },
-  {
-    title: "Metal Roofing",
-    slug: "metal-roofing",
-    imageUrl: "/images/rhr/metal-page.jpg",
-    description:
-      "Long-lasting metal in a range of colors that sheds East Texas heat and holds up for decades.",
-  },
-  {
-    title: "Torch-Down Rubber",
-    slug: "torch-down-rubber-roofing",
-    imageUrl: "/images/rhr/flat-1.jpg",
-    description:
-      "A sealed asphalt-and-rubber system for flat and low-pitch roofs, without the smell of hot tar.",
-  },
-  {
-    title: "Repair & Re-Decks",
-    slug: "roof-repair-and-redecks",
-    imageUrl: "/images/rhr/repair-page.jpg",
-    description:
-      "Storm inspections, leak repairs, tear-offs, and structural re-decks, with tarps and a daily magnet sweep.",
-  },
-];
+import { HOME } from "@/data/sections";
 
 export function RoofingSystemsSection() {
   return (
@@ -38,15 +8,15 @@ export function RoofingSystemsSection() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <h2 className="font-display text-[48px] sm:text-[64px] font-bold uppercase leading-[0.92] max-w-[12ch]">
-            East Texas roofing, done right
+            {HOME.systems.title}
           </h2>
           <Link href="/services" className="btn-sun text-xs self-start">
-            See how we can help
+            {HOME.systems.button}
           </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {RHR_SERVICES_CARDS.map((service) => (
+          {HOME.systems.cards.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}

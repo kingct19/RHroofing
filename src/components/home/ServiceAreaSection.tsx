@@ -4,6 +4,7 @@ import { MapPin, Phone } from "lucide-react";
 import { SERVICE_AREA_CITIES } from "@/data/serviceAreas";
 import { COMPANY_INFO } from "@/data/company";
 import { EastTexasPinMap } from "@/components/home/EastTexasPinMap";
+import { HOME } from "@/data/sections";
 
 /**
  * Matches Best Choice Roofing Shreveport DOM paths:
@@ -20,9 +21,9 @@ export function ServiceAreaSection() {
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-[38px] font-semibold text-[#000000] leading-tight">
                 <span className="text-[#0e0e0e] font-bold">
-                  Raymond Hardin Roofing
+                  {HOME.serviceArea.titleLead}
                 </span>{" "}
-                in Gilmer
+                {HOME.serviceArea.titlePlace}
               </h2>
 
               <ul className="space-y-2.5 text-base text-[#181617]">
@@ -75,7 +76,7 @@ export function ServiceAreaSection() {
             <div className="bg-white p-8 sm:p-10 rounded-[5px] shadow-lg flex flex-col justify-between w-full space-y-6">
               <div className="space-y-6">
                 <h2 className="text-2xl sm:text-[32px] font-semibold text-[#000000] leading-snug">
-                  Towns we schedule
+                  {HOME.serviceArea.townsTitle}
                 </h2>
 
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3.5 pt-2">
@@ -94,16 +95,16 @@ export function ServiceAreaSection() {
 
               <div className="pt-6 border-t border-slate-200 space-y-3">
                 <p className="text-sm sm:text-base font-medium text-[#181617]">
-                  * Not sure if we cover your area? Call{" "}
+                  {HOME.serviceArea.unsureNote}{" "}
                   <a
                     href={COMPANY_INFO.phoneHref}
                     className="font-bold text-[#0e0e0e] hover:underline"
                   >
-                    (903) 797-2756
+                    {COMPANY_INFO.phoneDisplay}
                   </a>
                 </p>
                 <p className="text-xs text-slate-500">
-                  Serving all of Upshur, Gregg, Smith, Wood, Camp, Titus, and Morris counties across East Texas since 1995.
+                  {HOME.serviceArea.countiesNote}
                 </p>
               </div>
             </div>

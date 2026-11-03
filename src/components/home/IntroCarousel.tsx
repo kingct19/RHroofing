@@ -2,29 +2,12 @@
 
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const SLIDES = [
-  {
-    src: "/images/rhr/slider-img1.png",
-    alt: "Standing-seam metal roof on an East Texas home",
-  },
-  {
-    src: "/images/rhr/slider-img2.png",
-    alt: "Architectural shingle roof in Gilmer",
-  },
-  {
-    src: "/images/rhr/slider-img3.png",
-    alt: "New shingle roof by Raymond Hardin Roofing",
-  },
-  {
-    src: "/images/rhr/slider-img4.png",
-    alt: "Completed Raymond Hardin Roofing project",
-  },
-];
+import { HOME } from "@/data/sections";
 
 export function IntroCarousel() {
+  const slides = HOME.introSlides;
   const [index, setIndex] = useState(0);
-  const count = SLIDES.length;
+  const count = slides.length;
 
   function go(next: number) {
     setIndex((next + count) % count);
@@ -33,7 +16,7 @@ export function IntroCarousel() {
   return (
     <div>
       <div className="relative overflow-hidden bg-[#e7ebea] h-[280px] sm:h-[360px] lg:h-[400px]">
-        {SLIDES.map((slide, slideIndex) => (
+        {slides.map((slide, slideIndex) => (
           <img
             key={slide.src}
             src={slide.src}
@@ -61,7 +44,7 @@ export function IntroCarousel() {
         </button>
       </div>
       <div className="mt-4 flex items-center justify-center gap-2">
-        {SLIDES.map((slide, slideIndex) => (
+        {slides.map((slide, slideIndex) => (
           <button
             key={slide.src}
             type="button"

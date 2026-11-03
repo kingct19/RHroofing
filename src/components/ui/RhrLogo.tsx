@@ -1,4 +1,5 @@
 import React from "react";
+import { COMPANY_INFO } from "@/data/company";
 
 interface RhrLogoProps {
   variant?: "light-bg" | "dark-bg";
@@ -25,8 +26,8 @@ export function RhrLogo({
     <div className={`inline-flex items-center gap-3.5 ${className}`}>
       {variant === "light-bg" ? (
         <img
-          src="/images/rhr-logo.jpg"
-          alt="Raymond Hardin Roofing RHR Logo"
+          src={COMPANY_INFO.logo}
+          alt={COMPANY_INFO.logoAlt}
           className="h-12 sm:h-14 w-auto object-contain shrink-0"
         />
       ) : (

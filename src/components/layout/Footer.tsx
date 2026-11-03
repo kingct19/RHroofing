@@ -9,6 +9,9 @@ import { COMPANY_INFO } from "@/data/company";
 import { ROOFING_SERVICES } from "@/data/services";
 import { SERVICE_AREA_CITIES } from "@/data/serviceAreas";
 import { RhrLogo } from "@/components/ui/RhrLogo";
+import { PAGES } from "@/data/sections";
+
+const footer = PAGES.footer;
 
 /**
  * Matches Best Choice Roofing Footer DOM paths:
@@ -30,13 +33,13 @@ export function Footer() {
             </Link>
             <div className="flex items-center gap-3 pt-2">
               <img
-                src="/images/rhr/raymondh.jpg"
-                alt="Raymond Hardin"
+                src={PAGES.about.portrait}
+                alt={PAGES.about.portraitAlt}
                 className="h-12 w-12 shrink-0 rounded-full object-cover object-[center_20%] border-2 border-white/50"
               />
               <div className="text-xs text-white/80 leading-snug">
-                <strong className="text-white block">Est. 1995 in Gilmer, TX</strong>
-                40+ Years East Texas Roofing Experience
+                <strong className="text-white block">{footer.established}</strong>
+                {footer.experience}
               </div>
             </div>
           </div>
@@ -44,7 +47,7 @@ export function Footer() {
           {/* Col 2 (20%): Raymond Hardin Roofing Contact Details */}
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-white">
-              Raymond Hardin Roofing
+              {COMPANY_INFO.name}
             </h3>
             <ul className="space-y-2.5 text-sm text-white/85">
               <li>
@@ -82,7 +85,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-white/75">
                 <MapPin className="w-4 h-4 text-[#9aafdf] shrink-0 mt-0.5" />
-                <span>Gilmer, TX</span>
+                <span>{COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}</span>
               </li>
               <li className="pt-1">
                 <Link
@@ -90,7 +93,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1.5 text-[#9aafdf] font-bold hover:underline"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>Contact Us Today</span>
+                  <span>{footer.contactLink}</span>
                 </Link>
               </li>
             </ul>
@@ -100,38 +103,17 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-white">
               <Link href="/about" className="hover:text-[#9aafdf]">
-                About
+                {footer.aboutHeading}
               </Link>
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
-              <li>
-                <Link href="/about" className="hover:text-[#9aafdf] transition-colors">
-                  The RHR Difference (Est. 1995)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about#how-to-choose-a-roofer"
-                  className="hover:text-[#9aafdf] transition-colors"
-                >
-                  How to Choose a Roofer
-                </Link>
-              </li>
-              <li>
-                <Link href="/#reviews" className="hover:text-[#9aafdf] transition-colors">
-                  Customer Reviews
-                </Link>
-              </li>
-              <li>
-                <Link href="/service-areas" className="hover:text-[#9aafdf] transition-colors">
-                  East Texas Locations
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="hover:text-[#9aafdf] transition-colors">
-                  Photo Gallery
-                </Link>
-              </li>
+              {footer.aboutLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-[#9aafdf] transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -139,7 +121,7 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-white">
               <Link href="/services" className="hover:text-[#9aafdf]">
-                Services
+                {footer.servicesHeading}
               </Link>
             </h3>
             <ul className="space-y-2 text-sm text-white/80">
@@ -158,44 +140,22 @@ export function Footer() {
 
           {/* Col 5 (20%): Resources & Free Next-Day Inspection */}
           <div className="space-y-3">
-            <h3 className="text-lg font-bold text-white">Resources</h3>
+            <h3 className="text-lg font-bold text-white">{footer.resourcesHeading}</h3>
             <ul className="space-y-2 text-sm text-white/80">
-              <li>
-                <Link
-                  href="/repairs/storm-hail-damage"
-                  className="hover:text-[#9aafdf] transition-colors"
-                >
-                  Storm and hail damage
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/repairs/leaky-roof-repair"
-                  className="hover:text-[#9aafdf] transition-colors"
-                >
-                  Leaky roof repair
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/repairs/new-roof-or-repair"
-                  className="hover:text-[#9aafdf] transition-colors"
-                >
-                  Do I need a new roof?
-                </Link>
-              </li>
-              <li>
-                <Link href="/#faqs" className="hover:text-[#9aafdf] transition-colors">
-                  Roofing FAQs
-                </Link>
-              </li>
+              {footer.resourceLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-[#9aafdf] transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <div className="pt-2">
               <Link
                 href="/contact"
                 className="inline-block w-full text-center px-4 py-2.5 rounded-[5px] bg-[#284078] hover:bg-[#1c305e] text-white text-xs font-bold uppercase tracking-wide transition-colors"
               >
-                Schedule FREE Inspection
+                {footer.inspectionButton}
               </Link>
             </div>
           </div>
@@ -204,7 +164,7 @@ export function Footer() {
         {/* East Texas Cities Quick SEO Links Bar */}
         <div className="mt-10 pt-6 border-t border-white/10">
           <div className="text-xs font-bold uppercase tracking-wider text-[#9aafdf] mb-2.5">
-            East Texas Towns & Surrounding Areas Served:
+            {footer.townsLabel}
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-white/70">
             {SERVICE_AREA_CITIES.map((city) => (
@@ -224,7 +184,7 @@ export function Footer() {
       <div className="bg-black/45 border-t border-white/10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <div className="text-center md:text-left">
-            Raymond Hardin Roofing is a licensed, bonded, insured, and BBB Accredited independent roofing contractor in Gilmer, TX. All Rights Reserved. ©{currentYear} Raymond Hardin Roofing |{" "}
+            {footer.finePrint} ©{currentYear} {COMPANY_INFO.name} |{" "}
             <Link href="/sitemap.xml" className="hover:text-white underline">
               Sitemap
             </Link>{" "}
@@ -254,13 +214,13 @@ export function Footer() {
           className="inline-flex min-w-0 items-center justify-center gap-1.5 rounded-[5px] bg-white px-2 py-3 text-[13px] font-bold whitespace-nowrap text-[#181617]"
         >
           <Phone className="h-4 w-4 shrink-0 text-[#0e0e0e]" />
-          903-797-2756
+          {COMPANY_INFO.phoneDisplay}
         </a>
         <Link
           href="/contact"
           className="inline-flex min-w-0 items-center justify-center rounded-[5px] bg-[#284078] px-2 py-3 text-[12px] font-bold uppercase whitespace-nowrap text-white"
         >
-          Free Inspection
+          {footer.mobileInspection}
         </Link>
       </div>
     </footer>

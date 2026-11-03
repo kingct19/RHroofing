@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     if (!apiKey) {
       console.error("[estimate] RESEND_API_KEY is not set");
       return NextResponse.json(
-        { error: "Unable to send your request. Please call 903-797-2756." },
+        { error: `Unable to send your request. Please call ${COMPANY_INFO.phoneDisplay}.` },
         { status: 500 },
       );
     }
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("[estimate] Resend rejected the message", error);
       return NextResponse.json(
-        { error: "Unable to send your request. Please call 903-797-2756." },
+        { error: `Unable to send your request. Please call ${COMPANY_INFO.phoneDisplay}.` },
         { status: 502 },
       );
     }
@@ -146,7 +146,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[estimate] failed", error);
     return NextResponse.json(
-      { error: "Unable to process request. Please call 903-797-2756." },
+      { error: `Unable to process request. Please call ${COMPANY_INFO.phoneDisplay}.` },
       { status: 500 },
     );
   }

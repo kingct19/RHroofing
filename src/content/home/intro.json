@@ -1,0 +1,27 @@
+{
+  "title": "Your friendly, local East Texas roofers",
+  "body": "We show up on time, explain the roof in plain language, and only recommend the work you actually need. No pressure. No gimmicks.",
+  "firstTitle": "Experienced and careful",
+  "firstBody": "Tarps go down before a tear-off, and a rolling magnet picks up nails every day.",
+  "secondTitle": "Service with integrity",
+  "secondBody": "We only recommend what you need. Licensed, bonded, insured, and BBB accredited since 1995.",
+  "linkLabel": "About the company >",
+  "slides": [
+    {
+      "src": "/images/rhr/slider-img1.png",
+      "alt": "Standing-seam metal roof on an East Texas home"
+    },
+    {
+      "src": "/images/rhr/slider-img2.png",
+      "alt": "Architectural shingle roof in Gilmer"
+    },
+    {
+      "src": "/images/rhr/slider-img3.png",
+      "alt": "New shingle roof by Raymond Hardin Roofing"
+    },
+    {
+      "src": "/images/rhr/slider-img4.png",
+      "alt": "Completed Raymond Hardin Roofing project"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "established": "Est. 1995 in Gilmer, TX",
+  "experience": "40+ Years East Texas Roofing Experience",
+  "contactLink": "Contact Us Today",
+  "aboutHeading": "About",
+  "aboutLinks": [
+    {
+      "label": "The RHR Difference (Est. 1995)",
+      "href": "/about"
+    },
+    {
+      "label": "How to Choose a Roofer",
+      "href": "/about#how-to-choose-a-roofer"
+    },
+    {
+      "label": "Customer Reviews",
+      "href": "/#reviews"
+    },
+    {
+      "label": "East Texas Locations",
+      "href": "/service-areas"
+    },
+    {
+      "label": "Photo Gallery",
+      "href": "/gallery"
+    }
+  ],
+  "servicesHeading": "Services",
+  "resourcesHeading": "Resources",
+  "resourceLinks": [
+    {
+      "label": "Storm and hail damage",
+      "href": "/repairs/storm-hail-damage"
+    },
+    {
+      "label": "Leaky roof repair",
+      "href": "/repairs/leaky-roof-repair"
+    },
+    {
+      "label": "Do I need a new roof?",
+      "href": "/repairs/new-roof-or-repair"
+    },
+    {
+      "label": "Roofing FAQs",
+      "href": "/#faqs"
+    }
+  ],
+  "inspectionButton": "Schedule FREE Inspection",
+  "townsLabel": "East Texas Towns & Surrounding Areas Served:",
+  "finePrint": "Raymond Hardin Roofing is a licensed, bonded, insured, and BBB Accredited independent roofing contractor in Gilmer, TX. All Rights Reserved.",
+  "mobileInspection": "Free Inspection"
+}

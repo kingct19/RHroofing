@@ -1,0 +1,27 @@
+{
+  "title": "Roofing in {city}, TX, and surrounding areas",
+  "challengesTitle": "What the roofs need here",
+  "surroundingTitle": "Surrounding areas",
+  "questionsTitle": "{city} questions",
+  "servicesTitle": "Our services",
+  "resourcesTitle": "Resources",
+  "resources": [
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repairs"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "bookTitle": "Book a visit in {city}"
+}

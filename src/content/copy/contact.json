@@ -1,0 +1,29 @@
+{
+  "kicker": "Contact",
+  "title": "Contact us today",
+  "phoneKicker": "Direct Phone Line",
+  "phoneTitle": "Speak With Us Today",
+  "phoneBody": "Fastest response for active leaks, storm damage, or scheduling an on-site estimate.",
+  "emailLabel": "Email",
+  "locationLabel": "Based in Gilmer",
+  "hoursLabel": "Hours of Operation",
+  "expectTitle": "What to Expect When You Contact Us",
+  "expectItems": [
+    {
+      "title": "Prompt Local Callback:",
+      "body": "We coordinate a convenient time to inspect your property in person."
+    },
+    {
+      "title": "Honest Roof & Deck Evaluation:",
+      "body": "We check shingles, metal fasteners, flat membranes, flashings, and wood decking."
+    },
+    {
+      "title": "Clear, Fair Pricing:",
+      "body": "Straightforward repair or replacement pricing with no high-pressure sales gimmicks."
+    }
+  ],
+  "townsLabel": "Towns We Visit Daily",
+  "metaTitle": "Contact & Free Roof Estimate | Gilmer & East TX | {phone}",
+  "metaDescription": "Contact Raymond Hardin Roofing in Gilmer, TX for a free residential or commercial roof inspection and estimate. Call {phone} or request a quote online.",
+  "intro": "Call {phone} ({phoneLabel}) or {phoneSecondary} ({phoneSecondaryLabel}), or email {email}."
+}

@@ -1,0 +1,31 @@
+{
+  "title": "From the crew",
+  "body": "Shingle, metal, torch-down, and tear-off work.",
+  "linkLabel": "See the gallery",
+  "photos": [
+    {
+      "src": "/images/rhr/slider-img2.png",
+      "title": "Shingle roof"
+    },
+    {
+      "src": "/images/rhr/slider-img1.png",
+      "title": "Metal roof"
+    },
+    {
+      "src": "/images/rhr/flat-1.jpg",
+      "title": "Torch-down roof"
+    },
+    {
+      "src": "/images/rhr/shingle-1.jpg",
+      "title": "Shingle roof"
+    },
+    {
+      "src": "/images/rhr/metal-3.jpg",
+      "title": "Metal roof"
+    },
+    {
+      "src": "/images/rhr/repair-page.jpg",
+      "title": "Tear-off"
+    }
+  ]
+}

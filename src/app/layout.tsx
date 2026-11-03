@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { COMPANY_INFO } from "@/data/company";
 
 const inter = Inter({
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Raymond Hardin Roofing",
   },
   description:
-    "Established in 1995 in Gilmer, TX, Raymond Hardin Roofing provides free same-day/next-day roof inspections, shingle roofs, metal roofs, torch-down rubber roofs, tear-offs, and re-decks across East Texas. Call (903) 797-2756.",
+    `Established in 1995 in Gilmer, TX, Raymond Hardin Roofing provides free same-day/next-day roof inspections, shingle roofs, metal roofs, torch-down rubber roofs, tear-offs, and re-decks across East Texas. Call ${COMPANY_INFO.phoneDisplay}.`,
   keywords: [
     "Raymond Hardin Roofing",
     "Gilmer TX roofer",
@@ -82,11 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${display.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#0e0e0e]">
-        <Header />
-        <main className="min-w-0 flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-screen bg-white text-[#0e0e0e]">{children}</body>
     </html>
   );
 }

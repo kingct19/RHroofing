@@ -7,6 +7,9 @@ import { COMPANY_INFO } from "@/data/company";
 import { ROOFING_SERVICES } from "@/data/services";
 import { REPAIR_PAGES } from "@/data/repairs";
 import { SERVICE_AREA_CITIES } from "@/data/serviceAreas";
+import { PAGES } from "@/data/sections";
+
+const navigation = PAGES.navigation;
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -85,8 +88,8 @@ export function Header() {
             onClick={() => setMobileMenuOpen(false)}
           >
             <img
-              src="/images/rhr-logo.jpg"
-              alt="Raymond Hardin Roofing"
+              src={COMPANY_INFO.logo}
+              alt={COMPANY_INFO.logoAlt}
               className="h-12 w-auto object-contain"
             />
           </Link>
@@ -97,7 +100,7 @@ export function Header() {
                 href="/services"
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
-                Services
+                {navigation.services}
                 <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
               <div className="pointer-events-none absolute left-0 top-full z-50 w-64 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
@@ -120,7 +123,7 @@ export function Header() {
                 href="/repairs"
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
-                Repairs
+                {navigation.repairs}
                 <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
               <div className="pointer-events-none absolute left-0 top-full z-50 w-60 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
@@ -143,7 +146,7 @@ export function Header() {
                 href="/service-areas"
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
-                Service Areas
+                {navigation.areas}
                 <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
               </Link>
               <div className="absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2">
@@ -162,28 +165,28 @@ export function Header() {
             </div>
 
             <Link href="/gallery" className="py-6 hover:opacity-60">
-              Gallery
+              {navigation.gallery}
             </Link>
             <Link href="/about" className="py-6 hover:opacity-60">
-              About
+              {navigation.about}
             </Link>
             <Link href="/contact" className="py-6 hover:opacity-60">
-              Contact
+              {navigation.contact}
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-2 shrink-0">
             <Link href="/contact" className="btn-sun btn-ink text-[12px] px-4 py-2.5">
-              Free estimate
+              {navigation.estimate}
             </Link>
             <a href={COMPANY_INFO.phoneHref} className="btn-sun text-[12px] px-4 py-2.5">
-              (903) 797-2756
+              {COMPANY_INFO.phoneDisplay}
             </a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
             <a href={COMPANY_INFO.phoneHref} className="btn-sun text-[12px] px-3 py-2">
-              Call
+              {navigation.call}
             </a>
             <button
               type="button"
@@ -221,7 +224,7 @@ export function Header() {
               mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
             }`}
           >
-          <div className="text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">Services</div>
+          <div className="text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">{navigation.services}</div>
           {ROOFING_SERVICES.map((service) => (
             <Link
               key={service.slug}
@@ -232,7 +235,7 @@ export function Header() {
               {service.shortTitle}
             </Link>
           ))}
-          <div className="mt-3 pt-4 border-t border-[#eee] text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">Repairs</div>
+          <div className="mt-3 pt-4 border-t border-[#eee] text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">{navigation.repairs}</div>
           {REPAIR_PAGES.map((page) => (
             <Link
               key={page.slug}
@@ -243,7 +246,7 @@ export function Header() {
               {page.title}
             </Link>
           ))}
-          <div className="mt-3 pt-4 border-t border-[#eee] text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">Service areas</div>
+          <div className="mt-3 pt-4 border-t border-[#eee] text-xs uppercase tracking-wider text-[#5c5c5c] mb-1">{navigation.areas}</div>
           <div className="grid grid-cols-2">
             {SERVICE_AREA_CITIES.map((city) => (
               <Link
@@ -258,13 +261,13 @@ export function Header() {
           </div>
           <div className="mt-3 pt-4 border-t border-[#eee] flex flex-col">
             <Link href="/gallery" onClick={() => setMobileMenuOpen(false)} className="py-3 text-base">
-              Gallery
+              {navigation.gallery}
             </Link>
             <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="py-3 text-base">
-              About
+              {navigation.about}
             </Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-sun mt-3">
-              Book an inspection
+              {navigation.book}
             </Link>
           </div>
           </div>

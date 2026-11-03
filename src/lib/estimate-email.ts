@@ -1,6 +1,6 @@
 import { COMPANY_INFO } from "@/data/company";
 
-const LOGO_URL = "https://raymondhardinroofing.vercel.app/images/rhr-logo.jpg";
+const LOGO_URL = `${COMPANY_INFO.domain.replace(/\/$/, "")}${COMPANY_INFO.logo}`;
 
 export interface EstimateEmailInput {
   name: string;
