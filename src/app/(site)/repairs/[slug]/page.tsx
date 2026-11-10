@@ -70,12 +70,12 @@ export default async function RepairDetailPage({ params }: RepairPageProps) {
 
       <article className="bg-white">
         <div className="mx-auto max-w-[1100px] px-6 pt-8 pb-16 sm:pt-12">
-          <nav className="flex items-center gap-2 text-sm text-[#5c5c5c]">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#5c5c5c]">
             <Link href="/" className="hover:underline">Home</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link href="/repairs" className="hover:underline">{detail.kicker}</Link>
-            <span>/</span>
-            <span className="text-[#0e0e0e]">{page.title}</span>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" className="text-[#0e0e0e]">{page.title}</span>
           </nav>
 
           <div className="mt-8 grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-14">

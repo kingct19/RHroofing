@@ -32,9 +32,13 @@ export function GoogleReviewCarousel() {
             >
               <article className="flex h-full min-h-[260px] flex-col rounded-md border border-[#e6e6e6] bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex text-[#f7c906]" aria-label={`${review.rating} stars`}>
+                  <div
+                    role="img"
+                    className="flex text-[#f7c906]"
+                    aria-label={`${review.rating} out of 5 stars`}
+                  >
                     {Array.from({ length: review.rating }).map((_, index) => (
-                      <Star key={index} className="h-4 w-4 fill-[#f7c906]" />
+                      <Star key={index} aria-hidden="true" className="h-4 w-4 fill-[#f7c906]" />
                     ))}
                   </div>
                   {review.date ? (
@@ -48,7 +52,7 @@ export function GoogleReviewCarousel() {
                 ) : null}
                 <div className="mt-auto flex items-center justify-between pt-6">
                   <span className="font-semibold text-[#0e0e0e]">{review.author}</span>
-                  <GoogleGIcon className="h-5 w-5" />
+                  <GoogleGIcon className="h-5 w-5" decorative />
                 </div>
               </article>
             </div>
@@ -62,7 +66,7 @@ export function GoogleReviewCarousel() {
           onClick={scrollPrev}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft aria-hidden="true" className="h-5 w-5" />
         </button>
         <button
           type="button"
@@ -70,7 +74,7 @@ export function GoogleReviewCarousel() {
           onClick={scrollNext}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight aria-hidden="true" className="h-5 w-5" />
         </button>
       </div>
     </div>

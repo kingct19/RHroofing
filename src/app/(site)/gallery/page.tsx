@@ -56,6 +56,7 @@ export default function GalleryPage() {
               <button
                 key={tab.id}
                 type="button"
+                aria-pressed={filter === tab.id}
                 onClick={() =>
                   setFilter(tab.id as "all" | "shingle" | "metal" | "flat" | "crew")
                 }

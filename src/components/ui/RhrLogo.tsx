@@ -27,16 +27,18 @@ export function RhrLogo({
       {variant === "light-bg" ? (
         <img
           src={COMPANY_INFO.logo}
-          alt={COMPANY_INFO.logoAlt}
+          alt={showText ? "" : COMPANY_INFO.logoAlt}
           className="h-12 sm:h-14 w-auto object-contain shrink-0"
         />
       ) : (
         <svg
+          role={showText ? undefined : "img"}
+          aria-hidden={showText ? true : undefined}
+          aria-label={showText ? undefined : "Raymond Hardin Roofing"}
           viewBox="0 0 180 110"
           className="h-12 sm:h-14 w-auto shrink-0"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          aria-label="Raymond Hardin Roofing RHR Monogram"
         >
           {/* Chimney on left slope */}
           <path

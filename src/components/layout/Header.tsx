@@ -79,6 +79,12 @@ export function Header() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-[#0e0e0e] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-[1280px] mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between gap-6 h-[78px]">
           <Link
@@ -94,16 +100,22 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-[#0e0e0e] whitespace-nowrap">
+          <nav
+            aria-label="Main navigation"
+            className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-[#0e0e0e] whitespace-nowrap"
+          >
             <div className="relative group">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 {navigation.services}
-                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
+                <ChevronDown
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 group-focus-within:rotate-180 motion-reduce:transition-none"
+                />
               </Link>
-              <div className="pointer-events-none absolute left-0 top-full z-50 w-64 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
+              <div className="pointer-events-none absolute left-0 top-full z-50 w-64 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none">
                 <div className="bg-white shadow-xl border border-[#eee] py-2">
                   {ROOFING_SERVICES.map((service) => (
                     <Link
@@ -124,9 +136,12 @@ export function Header() {
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 {navigation.repairs}
-                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
+                <ChevronDown
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 group-focus-within:rotate-180 motion-reduce:transition-none"
+                />
               </Link>
-              <div className="pointer-events-none absolute left-0 top-full z-50 w-60 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
+              <div className="pointer-events-none absolute left-0 top-full z-50 w-60 translate-y-1 opacity-0 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none">
                 <div className="bg-white shadow-xl border border-[#eee] py-2">
                   {REPAIR_PAGES.map((page) => (
                     <Link
@@ -147,10 +162,13 @@ export function Header() {
                 className="inline-flex items-center gap-1 py-6 hover:opacity-60"
               >
                 {navigation.areas}
-                <ChevronDown className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 motion-reduce:transition-none" />
+                <ChevronDown
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 transition duration-200 ease-out group-hover:rotate-180 group-focus-within:rotate-180 motion-reduce:transition-none"
+                />
               </Link>
               <div className="absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2">
-                <div className="pointer-events-none translate-y-1 bg-white opacity-0 shadow-xl border border-[#eee] p-3 grid grid-cols-2 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none">
+                <div className="pointer-events-none translate-y-1 bg-white opacity-0 shadow-xl border border-[#eee] p-3 grid grid-cols-2 transition duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none">
                   {SERVICE_AREA_CITIES.map((area) => (
                     <Link
                       key={area.slug}
@@ -195,7 +213,7 @@ export function Header() {
               aria-expanded={mobileMenuOpen}
               className="p-2 text-[#0e0e0e]"
             >
-              <span className="relative block h-6 w-6">
+              <span aria-hidden="true" className="relative block h-6 w-6">
                 <Menu
                   className={`absolute inset-0 h-6 w-6 transition duration-300 ease-out motion-reduce:transition-none ${
                     mobileMenuOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
@@ -217,7 +235,10 @@ export function Header() {
           mobileMenuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <div className="min-h-0 overflow-hidden">
+        <nav
+          aria-label="Mobile navigation"
+          className="min-h-0 overflow-hidden"
+        >
           <div
             inert={!mobileMenuOpen}
             className={`max-h-[calc(100dvh-78px-5.5rem)] overflow-y-auto border-t border-[#eee] bg-white px-5 py-4 transition duration-300 ease-out motion-reduce:transition-none ${
@@ -271,7 +292,7 @@ export function Header() {
             </Link>
           </div>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

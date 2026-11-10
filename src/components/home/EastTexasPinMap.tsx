@@ -36,6 +36,7 @@ export function EastTexasPinMap() {
     let cancelled = false;
 
     async function mountMap() {
+      // Dynamic import required because Leaflet accesses `window` on module evaluation during SSR.
       const leaflet = await import("leaflet");
       const L = leaflet.default;
       if (cancelled || !frameRef.current || mapRef.current) return;
@@ -67,6 +68,13 @@ export function EastTexasPinMap() {
           zIndexOffset: town.hq ? 500 : 0,
         }).addTo(map);
 
+        marker
+          .getElement()
+          ?.setAttribute(
+            "aria-label",
+            `${town.city}, TX${town.hq ? " (Headquarters)" : " service area"}`
+          );
+
         marker.bindPopup(
           `<div style="font-family:Inter,system-ui,sans-serif;min-width:140px">
             <strong>${town.city}, TX</strong>
@@ -96,7 +104,12 @@ export function EastTexasPinMap() {
       data-map
       className="relative z-0 bg-white rounded-[5px] shadow-md border border-slate-200 overflow-hidden"
     >
-      <div ref={frameRef} className="z-0 h-[390px] w-full bg-[#e7ebea]" />
+      <div
+        ref={frameRef}
+        role="region"
+        aria-label="East Texas service area map"
+        className="z-0 h-[390px] w-full bg-[#e7ebea]"
+      />
     </div>
   );
 }

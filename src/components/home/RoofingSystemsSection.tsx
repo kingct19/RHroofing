@@ -24,7 +24,7 @@ export function RoofingSystemsSection() {
             >
               <img
                 src={service.imageUrl}
-                alt={service.title}
+                alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />

@@ -17,14 +17,14 @@ export function HeroCarousel() {
   ]);
 
   return (
-    <div className="absolute inset-0">
+    <div aria-hidden="true" className="absolute inset-0">
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
           {HOME.heroSlides.map((slide) => (
             <div key={slide.src} className="relative h-full min-w-0 flex-[0_0_100%]">
               <img
                 src={slide.src}
-                alt={slide.alt}
+                alt=""
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>

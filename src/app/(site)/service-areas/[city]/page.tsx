@@ -81,12 +81,12 @@ export default async function CityServiceAreaPage({ params }: CityPageProps) {
 
       <div className="mx-auto grid max-w-[1100px] items-start gap-12 px-6 py-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14 lg:py-16">
         <article>
-          <nav className="flex items-center gap-2 text-sm text-[#5c5c5c]">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#5c5c5c]">
             <Link href="/" className="hover:underline">Home</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link href="/service-areas" className="hover:underline">Service areas</Link>
-            <span>/</span>
-            <span className="text-[#0e0e0e]">{city.city}</span>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" className="text-[#0e0e0e]">{city.city}</span>
           </nav>
 
           <p className="mt-8 text-sm font-semibold text-[#5c5c5c]">

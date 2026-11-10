@@ -6,6 +6,7 @@ import React from "react";
 export function BbbLogo({ className = "h-12 w-auto" }: { className?: string }) {
   return (
     <svg
+      role="img"
       viewBox="0 0 220 72"
       className={className}
       fill="none"
@@ -113,6 +114,7 @@ export function GoogleReviewsBadge({
 }) {
   return (
     <svg
+      role="img"
       viewBox="0 0 230 72"
       className={className}
       fill="none"
@@ -250,13 +252,16 @@ export function HeroReviewStack() {
   return (
     <div className="flex flex-col gap-9">
       <ReviewMark
-        icon={<GoogleGIcon className="w-9 h-9" />}
+        icon={<GoogleGIcon className="w-9 h-9" decorative />}
         score="4.9"
         caption="Google reviews"
       />
       <ReviewMark
         icon={
-          <div className="w-9 h-9 rounded-full bg-[#005A78] text-white flex items-center justify-center text-[11px] font-extrabold">
+          <div
+            aria-hidden="true"
+            className="w-9 h-9 rounded-full bg-[#005A78] text-white flex items-center justify-center text-[11px] font-extrabold"
+          >
             BBB
           </div>
         }
@@ -265,7 +270,10 @@ export function HeroReviewStack() {
       />
       <ReviewMark
         icon={
-          <div className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-[11px] font-extrabold">
+          <div
+            aria-hidden="true"
+            className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-[11px] font-extrabold"
+          >
             95
           </div>
         }
@@ -280,14 +288,22 @@ export function HeroReviewStack() {
 /**
  * Inline Google "G" Icon for individual review cards
  */
-export function GoogleGIcon({ className = "w-5 h-5" }: { className?: string }) {
+export function GoogleGIcon({
+  className = "w-5 h-5",
+  decorative = false,
+}: {
+  className?: string;
+  decorative?: boolean;
+}) {
   return (
     <svg
+      role={decorative ? undefined : "img"}
+      aria-hidden={decorative ? true : undefined}
+      aria-label={decorative ? undefined : "Google"}
       viewBox="0 0 40 40"
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Google"
     >
       <path
         d="M38.4 20.45c0-1.42-.13-2.78-.36-4.09H20v7.74h10.32c-.45 2.4-1.8 4.43-3.83 5.79v4.81h6.2c3.63-3.34 5.71-8.26 5.71-14.25z"

@@ -21,6 +21,7 @@ export function IntroCarousel() {
             key={slide.src}
             src={slide.src}
             alt={slide.alt}
+            aria-hidden={slideIndex !== index}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
               slideIndex === index ? "opacity-100" : "opacity-0"
             }`}
@@ -32,7 +33,7 @@ export function IntroCarousel() {
           onClick={() => go(index - 1)}
           className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-[#0e0e0e] flex items-center justify-center"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft aria-hidden="true" className="w-5 h-5" />
         </button>
         <button
           type="button"
@@ -40,7 +41,7 @@ export function IntroCarousel() {
           onClick={() => go(index + 1)}
           className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-[#0e0e0e] flex items-center justify-center"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight aria-hidden="true" className="w-5 h-5" />
         </button>
       </div>
       <div className="mt-4 flex items-center justify-center gap-2">
@@ -49,6 +50,7 @@ export function IntroCarousel() {
             key={slide.src}
             type="button"
             aria-label={`Show photo ${slideIndex + 1}`}
+            aria-pressed={slideIndex === index}
             onClick={() => setIndex(slideIndex)}
             className={`h-[3px] rounded-full transition-all ${
               slideIndex === index ? "w-8 bg-[#0e0e0e]" : "w-6 bg-[#d5d5d5]"
