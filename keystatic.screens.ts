@@ -182,6 +182,8 @@ export const editorScreens = {
     ctaTitle: requiredText("Closing headline"),
     ctaBody: requiredMultiline("Closing sentence"),
     ctaButton: requiredText("Closing button"),
+    metaTitle: googleTitle(),
+    metaDescription: googleBlurb(),
   }),
   servicesPage: screen("Services page", "src/content/copy/services", "/services", {
     kicker: smallLabel(),

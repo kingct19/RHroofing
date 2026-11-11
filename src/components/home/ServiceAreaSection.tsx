@@ -29,14 +29,14 @@ export function ServiceAreaSection() {
               <ul className="space-y-2.5 text-base text-[#181617]">
                 <li>
                   <a
-                    href="https://maps.google.com/?q=Gilmer,+TX"
+                    href={`https://maps.google.com/?q=${encodeURIComponent(`${COMPANY_INFO.headquarters.street}, ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} ${COMPANY_INFO.headquarters.zip}`)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-start gap-3 hover:text-[#0e0e0e] transition-colors"
                   >
-                    <MapPin className="w-5 h-5 text-[#0e0e0e] shrink-0 mt-1" />
+                    <MapPin aria-hidden="true" className="w-5 h-5 text-[#0e0e0e] shrink-0 mt-1" />
                     <span className="font-medium">
-                      Gilmer, TX
+                      {COMPANY_INFO.headquarters.street}, {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip}
                     </span>
                   </a>
                 </li>

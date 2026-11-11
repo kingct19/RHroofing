@@ -18,7 +18,7 @@ export function GET() {
     `- Work Phone: ${COMPANY_INFO.phoneDisplay}`,
     `- Cell Phone: ${COMPANY_INFO.phoneSecondaryDisplay}`,
     `- Email: ${COMPANY_INFO.email}`,
-    `- Headquarters: ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} ${COMPANY_INFO.headquarters.zip} (${COMPANY_INFO.headquarters.county})`,
+    `- Headquarters: ${COMPANY_INFO.headquarters.street}, ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} ${COMPANY_INFO.headquarters.zip} (${COMPANY_INFO.headquarters.county})`,
     `- Hours: ${COMPANY_INFO.hours.weekdays} (${COMPANY_INFO.hours.emergency})`,
     `- [Request a Free Roof Inspection](${base}/contact): Book a same-day or next-day estimate online.`,
     "",

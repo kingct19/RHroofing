@@ -31,12 +31,11 @@ const metadataBase = new URL(
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default:
-      "Gilmer, TX - Raymond Hardin Roofing | East Texas's Most Trusted Roofer Since 1995",
+    default: "Roofing Contractor in Gilmer, TX | Raymond Hardin Roofing",
     template: "%s | Raymond Hardin Roofing",
   },
   description:
-    `Established in 1995 in Gilmer, TX, Raymond Hardin Roofing provides free same-day/next-day roof inspections, shingle roofs, metal roofs, torch-down rubber roofs, tear-offs, and re-decks across East Texas. Call ${COMPANY_INFO.phoneDisplay}.`,
+    `Based at ${COMPANY_INFO.headquarters.street} in Gilmer, TX since 1995, Raymond Hardin Roofing provides free roof inspections, shingle, metal, and torch-down flat roofs across East Texas. Call ${COMPANY_INFO.phoneDisplay}.`,
   keywords: [
     "Raymond Hardin Roofing",
     "Gilmer TX roofer",

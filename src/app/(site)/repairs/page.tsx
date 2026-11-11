@@ -14,11 +14,22 @@ import {
 
 const repairsPage = PAGES.repairs;
 
+const repairsDescription = `${repairsPage.metaDescription} Call ${COMPANY_INFO.phoneDisplay}.`;
+
 export const metadata: Metadata = {
   title: repairsPage.metaTitle,
-  description: `${repairsPage.metaDescription} Call ${COMPANY_INFO.phoneDisplay}.`,
+  description: repairsDescription,
   alternates: {
     canonical: "/repairs",
+  },
+  openGraph: {
+    title: `${repairsPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: repairsDescription,
+    url: `${COMPANY_INFO.domain}/repairs`,
+  },
+  twitter: {
+    title: `${repairsPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: repairsDescription,
   },
 };
 

@@ -54,9 +54,13 @@ export async function generateMetadata({
       canonical: `/services/${service.slug}`,
     },
     openGraph: {
-      title: service.metaTitle,
+      title: `${service.metaTitle} | ${COMPANY_INFO.name}`,
       description: service.metaDescription,
       url: `${COMPANY_INFO.domain}/services/${service.slug}`,
+    },
+    twitter: {
+      title: `${service.metaTitle} | ${COMPANY_INFO.name}`,
+      description: service.metaDescription,
     },
   };
 }
@@ -97,7 +101,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <div>
               <p className="kicker mb-4">{getServiceCategoryLabel(service.category)}</p>
               <h1 className="font-display font-bold leading-[0.92] tracking-[-0.03em] text-[#0e0e0e]">
-                <span className="block text-[46px] sm:text-[64px]">{service.shortTitle}</span>
+                <span className="block text-[46px] sm:text-[64px]">{service.shortTitle}</span>{" "}
                 <span className="mt-2 block text-[28px] sm:text-[36px]">{detail.placeLine}</span>
               </h1>
               <p className="mt-6 max-w-[36rem] text-[17px] leading-relaxed text-[#3a3a3a]">
@@ -244,7 +248,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {detail.readyTitle}
           </h2>
           <p className="mt-4 text-[17px] text-[#3a3a3a]">
-            Gilmer, TX {COMPANY_INFO.headquarters.zip}
+            {COMPANY_INFO.headquarters.street}, {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip}
           </p>
           <a href={COMPANY_INFO.phoneHref} className="mt-3 inline-flex items-center gap-2 text-lg font-semibold">
             <Phone className="h-5 w-5" />

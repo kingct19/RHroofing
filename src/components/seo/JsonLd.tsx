@@ -61,6 +61,7 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
     slogan: COMPANY_INFO.tagline,
     address: {
       "@type": "PostalAddress",
+      streetAddress: COMPANY_INFO.headquarters.street,
       addressLocality: COMPANY_INFO.headquarters.city,
       addressRegion: COMPANY_INFO.headquarters.state,
       postalCode: COMPANY_INFO.headquarters.zip,
@@ -71,6 +72,9 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
       latitude: COMPANY_INFO.headquarters.latitude,
       longitude: COMPANY_INFO.headquarters.longitude,
     },
+    sameAs: [
+      "https://www.bbb.org/east-texas/quote/request-raymond-hardin-roofing-28053976",
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -118,6 +122,7 @@ export function buildServiceSchema(service: RoofingService) {
       telephone: COMPANY_INFO.phoneE164,
       address: {
         "@type": "PostalAddress",
+        streetAddress: COMPANY_INFO.headquarters.street,
         addressLocality: COMPANY_INFO.headquarters.city,
         addressRegion: COMPANY_INFO.headquarters.state,
         postalCode: COMPANY_INFO.headquarters.zip,

@@ -15,8 +15,7 @@ import {
 } from "./keystatic.fields";
 
 // Local development writes src/content. Production commits through GitHub so a
-// save on the live site redeploys. Connect it once by switching this to github
-// and opening /keystatic; Keystatic writes the app env vars into .env.
+// save on the live site redeploys. The GitHub App credentials live in .env.
 const storage =
   process.env.NODE_ENV === "production"
     ? ({ kind: "github", repo: "kingct19/RHroofing" } as const)
@@ -96,6 +95,7 @@ export default config({
         domain: requiredText("Website", "Include https://"),
         headquarters: fields.object(
           {
+            street: requiredText("Street address", "Example: 1217 Old Enon Rd"),
             city: requiredText("City"),
             county: requiredText("County"),
             state: requiredText("State abbreviation"),

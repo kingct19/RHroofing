@@ -4,10 +4,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   experimental: {
-    inlineCss: true,
+    inlineCss: process.env.NODE_ENV === "production",
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 80],
     remotePatterns: [
       {
         protocol: "https",
@@ -18,8 +19,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/node/:path*",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/content/:path*",
+        destination: "/gallery",
         permanent: true,
       },
       {
@@ -49,12 +60,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/repair",
-        destination: "/services/roof-repair-and-redecks",
+        destination: "/repairs",
+        permanent: true,
+      },
+      {
+        source: "/repair/storm",
+        destination: "/repairs/storm-hail-damage",
+        permanent: true,
+      },
+      {
+        source: "/repair/leaks",
+        destination: "/repairs/leaky-roof-repair",
+        permanent: true,
+      },
+      {
+        source: "/repair/do-i-need-a-new-roof",
+        destination: "/repairs/new-roof-or-repair",
         permanent: true,
       },
       {
         source: "/repair/:path*",
-        destination: "/services/roof-repair-and-redecks",
+        destination: "/repairs",
         permanent: true,
       },
       {

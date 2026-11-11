@@ -49,9 +49,13 @@ export async function generateMetadata({
       canonical: `/service-areas/${cityData.slug}`,
     },
     openGraph: {
-      title: cityData.metaTitle,
+      title: `${cityData.metaTitle} | ${COMPANY_INFO.name}`,
       description: cityData.metaDescription,
       url: `${COMPANY_INFO.domain}/service-areas/${cityData.slug}`,
+    },
+    twitter: {
+      title: `${cityData.metaTitle} | ${COMPANY_INFO.name}`,
+      description: cityData.metaDescription,
     },
   };
 }

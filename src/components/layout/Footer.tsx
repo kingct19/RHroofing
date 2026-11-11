@@ -87,8 +87,10 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/75">
-                <MapPin className="w-4 h-4 text-[#9aafdf] shrink-0 mt-0.5" />
-                <span>{COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}</span>
+                <MapPin aria-hidden="true" className="w-4 h-4 text-[#9aafdf] shrink-0 mt-0.5" />
+                <span>
+                  {COMPANY_INFO.headquarters.street}, {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip}
+                </span>
               </li>
               <li className="pt-1">
                 <Link

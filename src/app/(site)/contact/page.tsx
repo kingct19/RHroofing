@@ -21,11 +21,23 @@ import {
 
 const contact = PAGES.contact;
 
+const contactTitle = fillTemplate(contact.metaTitle, { phone: COMPANY_INFO.phoneDisplay });
+const contactDescription = fillTemplate(contact.metaDescription, { phone: COMPANY_INFO.phoneDisplay });
+
 export const metadata: Metadata = {
-  title: fillTemplate(contact.metaTitle, { phone: COMPANY_INFO.phoneDisplay }),
-  description: fillTemplate(contact.metaDescription, { phone: COMPANY_INFO.phoneDisplay }),
+  title: contactTitle,
+  description: contactDescription,
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: `${contactTitle} | ${COMPANY_INFO.name}`,
+    description: contactDescription,
+    url: `${COMPANY_INFO.domain}/contact`,
+  },
+  twitter: {
+    title: `${contactTitle} | ${COMPANY_INFO.name}`,
+    description: contactDescription,
   },
 };
 
@@ -124,9 +136,9 @@ export default function ContactPage() {
                         {contact.locationLabel}
                       </div>
                       <div className="text-xs text-limestone/75 mt-0.5">
-                        {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}
+                        {COMPANY_INFO.headquarters.street}
                         <br />
-                        {COMPANY_INFO.headquarters.county}
+                        {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip} ({COMPANY_INFO.headquarters.county})
                       </div>
                     </div>
                   </div>

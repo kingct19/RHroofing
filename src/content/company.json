@@ -12,14 +12,15 @@
   "email": "raymondhardinroofing@yahoo.com",
   "domain": "https://www.raymondhardinroofingco.com",
   "headquarters": {
+    "street": "1217 Old Enon Rd",
     "city": "Gilmer",
     "county": "Upshur County",
     "state": "TX",
     "stateFull": "Texas",
     "zip": "75644",
     "region": "East Texas",
-    "latitude": 32.7287,
-    "longitude": -94.9424
+    "latitude": 32.7317,
+    "longitude": -94.9649
   },
   "hours": {
     "weekdays": "Monday – Saturday: 7:00 AM – 6:00 PM",

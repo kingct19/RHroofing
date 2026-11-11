@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    title: `${about.metaTitle} | ${COMPANY_INFO.name}`,
+    description: about.metaDescription,
+    url: `${COMPANY_INFO.domain}/about`,
+  },
+  twitter: {
+    title: `${about.metaTitle} | ${COMPANY_INFO.name}`,
+    description: about.metaDescription,
+  },
 };
 
 export default function AboutPage() {

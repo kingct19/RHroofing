@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services",
   },
+  openGraph: {
+    title: `${servicesPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: servicesPage.metaDescription,
+    url: `${COMPANY_INFO.domain}/services`,
+  },
+  twitter: {
+    title: `${servicesPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: servicesPage.metaDescription,
+  },
 };
 
 export default function ServicesIndexPage() {

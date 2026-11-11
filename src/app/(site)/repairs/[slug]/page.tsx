@@ -43,6 +43,15 @@ export async function generateMetadata({
     alternates: {
       canonical: `/repairs/${page.slug}`,
     },
+    openGraph: {
+      title: `${page.metaTitle} | ${COMPANY_INFO.name}`,
+      description: page.metaDescription,
+      url: `${COMPANY_INFO.domain}/repairs/${page.slug}`,
+    },
+    twitter: {
+      title: `${page.metaTitle} | ${COMPANY_INFO.name}`,
+      description: page.metaDescription,
+    },
   };
 }
 

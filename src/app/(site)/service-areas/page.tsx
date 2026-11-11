@@ -13,11 +13,22 @@ import {
 
 const areasPage = PAGES.serviceAreas;
 
+const areasDescription = `${areasPage.metaDescription} Call ${COMPANY_INFO.phoneDisplay}.`;
+
 export const metadata: Metadata = {
   title: areasPage.metaTitle,
-  description: `${areasPage.metaDescription} Call ${COMPANY_INFO.phoneDisplay}.`,
+  description: areasDescription,
   alternates: {
     canonical: "/service-areas",
+  },
+  openGraph: {
+    title: `${areasPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: areasDescription,
+    url: `${COMPANY_INFO.domain}/service-areas`,
+  },
+  twitter: {
+    title: `${areasPage.metaTitle} | ${COMPANY_INFO.name}`,
+    description: areasDescription,
   },
 };
 

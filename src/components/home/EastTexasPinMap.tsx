@@ -5,7 +5,7 @@ import type { Map as LeafletMap } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const TOWNS = [
-  { slug: "gilmer-tx", city: "Gilmer", lat: 32.7287, lng: -94.9424, hq: true },
+  { slug: "gilmer-tx", city: "Gilmer", lat: 32.7317, lng: -94.9649, hq: true },
   { slug: "longview-tx", city: "Longview", lat: 32.5007, lng: -94.7405, hq: false },
   { slug: "tyler-tx", city: "Tyler", lat: 32.3513, lng: -95.3011, hq: false },
   { slug: "gladewater-tx", city: "Gladewater", lat: 32.5368, lng: -94.9752, hq: false },
