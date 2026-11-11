@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, HardHat } from "lucide-react";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -170,11 +171,16 @@ export default function HomePage() {
           <ul className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {HOME.crew.photos.map((photo) => (
               <li key={photo.src}>
-                <img
-                  src={photo.src}
-                  alt={photo.title}
-                  className="aspect-[3/2] w-full object-cover"
-                />
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#e7ebea]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.title}
+                    fill
+                    sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
+                    quality={80}
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="mt-3 font-display text-[28px] font-bold leading-none">
                   {photo.title}
                 </h3>

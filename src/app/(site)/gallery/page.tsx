@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { PageIntro } from "@/components/ui/PageIntro";
@@ -79,11 +80,13 @@ export default function GalleryPage() {
                 className="bg-white rounded-[5px] overflow-hidden shadow-md border border-slate-200 group"
               >
                 <div className="relative h-64 overflow-hidden bg-slate-900">
-                  <img
+                  <Image
                     src={photo.src}
                     alt={photo.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                    quality={80}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#0e0e0e] text-white text-[10px] font-bold uppercase tracking-wider">
                     {galleryBadge(photo.category)}
@@ -93,9 +96,11 @@ export default function GalleryPage() {
                   <span className="text-sm font-bold text-[#181617]">
                     {photo.title}
                   </span>
-                  <img
+                  <Image
                     src={COMPANY_INFO.logo}
-                    alt={COMPANY_INFO.logoAlt}
+                    alt=""
+                    width={139}
+                    height={52}
                     className="h-5 w-auto object-contain shrink-0"
                   />
                 </div>

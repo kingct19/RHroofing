@@ -29,11 +29,16 @@ function pinMarkup(hq: boolean) {
 }
 
 export function EastTexasPinMap() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
 
   useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper || mapRef.current) return;
+
     let cancelled = false;
+    let observer: IntersectionObserver | null = null;
 
     async function mountMap() {
       // Dynamic import required because Leaflet accesses `window` on module evaluation during SSR.
@@ -90,10 +95,25 @@ export function EastTexasPinMap() {
       mapRef.current = map;
     }
 
-    void mountMap();
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer?.disconnect();
+            observer = null;
+            void mountMap();
+          }
+        },
+        { rootMargin: "350px 0px" }
+      );
+      observer.observe(wrapper);
+    } else {
+      void mountMap();
+    }
 
     return () => {
       cancelled = true;
+      observer?.disconnect();
       mapRef.current?.remove();
       mapRef.current = null;
     };
@@ -101,6 +121,7 @@ export function EastTexasPinMap() {
 
   return (
     <div
+      ref={wrapperRef}
       data-map
       className="relative z-0 bg-white rounded-[5px] shadow-md border border-slate-200 overflow-hidden"
     >

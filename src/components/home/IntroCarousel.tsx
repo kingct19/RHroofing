@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { HOME } from "@/data/sections";
 
@@ -17,12 +18,15 @@ export function IntroCarousel() {
     <div>
       <div className="relative overflow-hidden bg-[#e7ebea] h-[280px] sm:h-[360px] lg:h-[400px]">
         {slides.map((slide, slideIndex) => (
-          <img
+          <Image
             key={slide.src}
             src={slide.src}
             alt={slide.alt}
+            fill
+            sizes="(min-width: 1024px) 660px, 100vw"
+            quality={80}
             aria-hidden={slideIndex !== index}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+            className={`object-cover transition-opacity duration-700 ${
               slideIndex === index ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -31,7 +35,7 @@ export function IntroCarousel() {
           type="button"
           aria-label="Previous photo"
           onClick={() => go(index - 1)}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-[#0e0e0e] flex items-center justify-center"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 text-[#0e0e0e] flex items-center justify-center"
         >
           <ChevronLeft aria-hidden="true" className="w-5 h-5" />
         </button>
@@ -39,12 +43,12 @@ export function IntroCarousel() {
           type="button"
           aria-label="Next photo"
           onClick={() => go(index + 1)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-[#0e0e0e] flex items-center justify-center"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 text-[#0e0e0e] flex items-center justify-center"
         >
           <ChevronRight aria-hidden="true" className="w-5 h-5" />
         </button>
       </div>
-      <div className="mt-4 flex items-center justify-center gap-2">
+      <div className="mt-2 flex items-center justify-center gap-1">
         {slides.map((slide, slideIndex) => (
           <button
             key={slide.src}
@@ -52,10 +56,14 @@ export function IntroCarousel() {
             aria-label={`Show photo ${slideIndex + 1}`}
             aria-pressed={slideIndex === index}
             onClick={() => setIndex(slideIndex)}
-            className={`h-[3px] rounded-full transition-all ${
-              slideIndex === index ? "w-8 bg-[#0e0e0e]" : "w-6 bg-[#d5d5d5]"
-            }`}
-          />
+            className="flex h-8 items-center justify-center px-1.5"
+          >
+            <span
+              className={`block h-[3px] rounded-full transition-opacity duration-300 ${
+                slideIndex === index ? "w-8 bg-[#0e0e0e] opacity-100" : "w-6 bg-[#0e0e0e] opacity-25"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

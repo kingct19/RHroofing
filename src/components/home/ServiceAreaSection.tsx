@@ -79,14 +79,14 @@ export function ServiceAreaSection() {
                   {HOME.serviceArea.townsTitle}
                 </h2>
 
-                <div className="grid grid-cols-2 gap-x-6 gap-y-3.5 pt-2">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 pt-2">
                   {SERVICE_AREA_CITIES.map((area) => (
                     <Link
                       key={area.slug}
                       href={`/service-areas/${area.slug}`}
-                      className="inline-flex items-center gap-2.5 text-base font-semibold text-[#181617] hover:text-[#0e0e0e] transition-colors"
+                      className="inline-flex items-center gap-2.5 py-1 text-base font-semibold text-[#181617] hover:text-[#0e0e0e] transition-colors"
                     >
-                      <MapPin className="h-4 w-4 shrink-0 text-[#0e0e0e]" />
+                      <MapPin aria-hidden="true" className="h-4 w-4 shrink-0 text-[#0e0e0e]" />
                       <span>{area.city}</span>
                     </Link>
                   ))}

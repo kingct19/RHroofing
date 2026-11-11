@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
@@ -20,12 +21,18 @@ export function HeroCarousel() {
     <div aria-hidden="true" className="absolute inset-0">
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
-          {HOME.heroSlides.map((slide) => (
+          {HOME.heroSlides.map((slide, index) => (
             <div key={slide.src} className="relative h-full min-w-0 flex-[0_0_100%]">
-              <img
+              <Image
                 src={slide.src}
                 alt=""
-                className="absolute inset-0 h-full w-full object-cover"
+                fill
+                priority={index === 0}
+                fetchPriority={index === 0 ? "high" : "low"}
+                loading={index === 0 ? "eager" : "lazy"}
+                sizes="100vw"
+                quality={80}
+                className="object-cover"
               />
             </div>
           ))}

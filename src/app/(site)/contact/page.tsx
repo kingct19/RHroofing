@@ -165,16 +165,16 @@ export default function ContactPage() {
               </div>
 
               {/* Towns Served Quick Links */}
-              <div className="bg-white p-6 rounded-xl border border-slate-deep/10 space-y-3">
+          <div className="bg-white p-6 rounded-xl border border-slate-deep/10 space-y-3">
                 <div className="text-xs font-mono uppercase tracking-wider text-copper font-semibold">
                   {contact.townsLabel}
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {SERVICE_AREA_CITIES.map((city) => (
                     <Link
                       key={city.slug}
                       href={`/service-areas/${city.slug}`}
-                      className="px-2.5 py-1 rounded bg-limestone hover:bg-sandstone text-xs font-medium text-slate-deep transition-colors"
+                      className="px-3 py-1.5 rounded bg-limestone hover:bg-sandstone text-xs font-medium text-slate-deep transition-colors"
                     >
                       {city.city}, TX
                     </Link>

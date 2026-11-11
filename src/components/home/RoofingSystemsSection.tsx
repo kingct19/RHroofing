@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { HOME } from "@/data/sections";
 
@@ -22,17 +23,20 @@ export function RoofingSystemsSection() {
               href={`/services/${service.slug}`}
               className="group relative min-h-[360px] overflow-hidden bg-[#1a1a1a]"
             >
-              <img
+              <Image
                 src={service.imageUrl}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition duration-500"
+                fill
+                sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw"
+                quality={80}
+                className="object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="font-display text-3xl uppercase leading-none">
                   {service.title}
                 </h3>
-                <p className="mt-3 overflow-hidden text-sm leading-relaxed text-white/85 transition-all duration-300 [@media(hover:hover)]:max-h-0 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:max-h-40 [@media(hover:hover)]:group-hover:opacity-100">
+                <p className="mt-3 overflow-hidden text-sm leading-relaxed text-white/85 transition-opacity duration-300 [@media(hover:hover)]:max-h-0 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:max-h-40 [@media(hover:hover)]:group-hover:opacity-100">
                   {service.description}
                 </p>
               </div>

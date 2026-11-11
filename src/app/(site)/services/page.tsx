@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ROOFING_SERVICES } from "@/data/services";
 import { COMPANY_INFO } from "@/data/company";
@@ -51,11 +52,16 @@ export default function ServicesIndexPage() {
                   href={`/services/${service.slug}`}
                   className="group grid items-center gap-5 py-7 sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-8 lg:grid-cols-[260px_minmax(0,1fr)]"
                 >
-                  <img
-                    src={service.imageUrl}
-                    alt=""
-                    className="aspect-[3/2] w-full object-cover"
-                  />
+                  <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#e7ebea]">
+                    <Image
+                      src={service.imageUrl}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 260px, (min-width: 640px) 200px, 100vw"
+                      quality={80}
+                      className="object-cover"
+                    />
+                  </div>
                   <div>
                     <h2 className="font-display text-[32px] font-bold leading-none tracking-[-0.02em] text-[#0e0e0e] underline-offset-4 group-hover:underline sm:text-[40px]">
                       {service.shortTitle}

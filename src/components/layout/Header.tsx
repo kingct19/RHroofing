@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
@@ -93,9 +94,12 @@ export function Header() {
             aria-label="Raymond Hardin Roofing home"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <img
+            <Image
               src={COMPANY_INFO.logo}
               alt={COMPANY_INFO.logoAlt}
+              width={139}
+              height={52}
+              priority
               className="h-12 w-auto object-contain"
             />
           </Link>
@@ -203,7 +207,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <a href={COMPANY_INFO.phoneHref} className="btn-sun text-[12px] px-3 py-2">
+            <a href={COMPANY_INFO.phoneHref} className="btn-sun text-[12px] px-3 py-2.5">
               {navigation.call}
             </a>
             <button
@@ -211,7 +215,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen((open) => !open)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
-              className="p-2 text-[#0e0e0e]"
+              className="p-2.5 text-[#0e0e0e]"
             >
               <span aria-hidden="true" className="relative block h-6 w-6">
                 <Menu

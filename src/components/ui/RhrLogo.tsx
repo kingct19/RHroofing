@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { COMPANY_INFO } from "@/data/company";
 
 interface RhrLogoProps {
@@ -25,9 +26,11 @@ export function RhrLogo({
   return (
     <div className={`inline-flex items-center gap-3.5 ${className}`}>
       {variant === "light-bg" ? (
-        <img
+        <Image
           src={COMPANY_INFO.logo}
           alt={showText ? "" : COMPANY_INFO.logoAlt}
+          width={139}
+          height={52}
           className="h-12 sm:h-14 w-auto object-contain shrink-0"
         />
       ) : (

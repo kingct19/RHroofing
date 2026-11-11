@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GOOGLE_REVIEW_URL } from "@/data/testimonials";
 import { PAGES } from "@/data/sections";
 
@@ -6,7 +7,7 @@ const reviewQr = PAGES.reviewQr;
 export function GoogleReviewQr() {
   return (
     <div className="mx-auto mt-10 flex max-w-[680px] flex-col items-center gap-6 border border-[#e6e6e6] bg-[#f6f5f2] px-6 py-8 sm:flex-row sm:items-center sm:px-8">
-      <img
+      <Image
         src={reviewQr.image}
         alt={reviewQr.imageAlt}
         width={160}

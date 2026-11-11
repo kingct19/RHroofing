@@ -37,6 +37,8 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
     url: cityOverride
       ? `${COMPANY_INFO.domain}/service-areas/${cityOverride.slug}`
       : COMPANY_INFO.domain,
+    logo: `${COMPANY_INFO.domain}/icon.png`,
+    image: `${COMPANY_INFO.domain}${COMPANY_INFO.logo}`,
     telephone: COMPANY_INFO.phoneE164,
     email: COMPANY_INFO.email,
     contactPoint: [

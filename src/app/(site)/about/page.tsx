@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
@@ -48,11 +49,12 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-12 grid items-start gap-10 sm:grid-cols-[210px_minmax(0,1fr)] sm:gap-12">
-            <img
+            <Image
               src={about.portrait}
               alt={about.portraitAlt}
               width={227}
               height={323}
+              priority
               className="h-auto w-[210px] max-w-full rounded-full"
             />
             <div className="max-w-[640px] space-y-4 text-[17px] leading-relaxed text-[#3a3a3a]">
@@ -72,11 +74,16 @@ export default function AboutPage() {
             ))}
           </dl>
 
-          <img
-            src={about.photo}
-            alt={about.photoAlt}
-            className="mt-14 aspect-[16/7] w-full object-cover"
-          />
+          <div className="relative mt-14 aspect-[16/7] w-full overflow-hidden bg-[#e7ebea]">
+            <Image
+              src={about.photo}
+              alt={about.photoAlt}
+              fill
+              sizes="(min-width: 1140px) 1052px, 100vw"
+              quality={80}
+              className="object-cover"
+            />
+          </div>
         </div>
       </article>
 

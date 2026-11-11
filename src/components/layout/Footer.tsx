@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Phone,
@@ -32,9 +33,11 @@ export function Footer() {
               <RhrLogo variant="dark-bg" showText />
             </Link>
             <div className="flex items-center gap-3 pt-2">
-              <img
+              <Image
                 src={PAGES.about.portrait}
                 alt={PAGES.about.portraitAlt}
+                width={48}
+                height={48}
                 className="h-12 w-12 shrink-0 rounded-full object-cover object-[center_20%] border-2 border-white/50"
               />
               <div className="text-xs text-white/80 leading-snug">
@@ -106,10 +109,10 @@ export function Footer() {
                 {footer.aboutHeading}
               </Link>
             </h3>
-            <ul className="space-y-2 text-sm text-white/80">
+            <ul className="space-y-1 text-sm text-white/80">
               {footer.aboutLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-[#9aafdf] transition-colors">
+                  <Link href={item.href} className="inline-block py-1 hover:text-[#9aafdf] transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -124,12 +127,12 @@ export function Footer() {
                 {footer.servicesHeading}
               </Link>
             </h3>
-            <ul className="space-y-2 text-sm text-white/80">
+            <ul className="space-y-1 text-sm text-white/80">
               {ROOFING_SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="hover:text-[#9aafdf] transition-colors"
+                    className="inline-block py-1 hover:text-[#9aafdf] transition-colors"
                   >
                     {service.shortTitle}
                   </Link>
@@ -141,10 +144,10 @@ export function Footer() {
           {/* Col 5 (20%): Resources & Free Next-Day Inspection */}
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-white">{footer.resourcesHeading}</h3>
-            <ul className="space-y-2 text-sm text-white/80">
+            <ul className="space-y-1 text-sm text-white/80">
               {footer.resourceLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-[#9aafdf] transition-colors">
+                  <Link href={item.href} className="inline-block py-1 hover:text-[#9aafdf] transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -166,12 +169,12 @@ export function Footer() {
           <div className="text-xs font-bold uppercase tracking-wider text-[#9aafdf] mb-2.5">
             {footer.townsLabel}
           </div>
-          <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-white/70">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/70">
             {SERVICE_AREA_CITIES.map((city) => (
               <Link
                 key={city.slug}
                 href={`/service-areas/${city.slug}`}
-                className="hover:text-white transition-colors"
+                className="inline-block py-1 hover:text-white transition-colors"
               >
                 {city.city}, TX
               </Link>
@@ -185,11 +188,11 @@ export function Footer() {
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <div className="text-center md:text-left">
             {footer.finePrint} ©{currentYear} {COMPANY_INFO.name} |{" "}
-            <Link href="/sitemap.xml" className="hover:text-white underline">
+            <Link href="/sitemap.xml" className="inline-block py-1 px-1 hover:text-white underline">
               Sitemap
             </Link>{" "}
             |{" "}
-            <Link href="/contact" className="hover:text-white underline">
+            <Link href="/contact" className="inline-block py-1 px-1 hover:text-white underline">
               Free Estimate
             </Link>
           </div>

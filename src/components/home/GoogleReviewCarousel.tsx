@@ -64,7 +64,7 @@ export function GoogleReviewCarousel() {
           type="button"
           aria-label="Previous reviews"
           onClick={scrollPrev}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
         >
           <ChevronLeft aria-hidden="true" className="h-5 w-5" />
         </button>
@@ -72,7 +72,7 @@ export function GoogleReviewCarousel() {
           type="button"
           aria-label="Next reviews"
           onClick={scrollNext}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#0e0e0e] text-[#0e0e0e]"
         >
           <ChevronRight aria-hidden="true" className="h-5 w-5" />
         </button>

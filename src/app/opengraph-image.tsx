@@ -147,7 +147,7 @@ export default async function OpenGraphImage() {
                   marginRight: 10,
                 }}
               />
-              RAYMONDHARDIN-ROOFING.COM
+              RAYMONDHARDINROOFINGCO.COM
             </div>
           </div>
         </div>

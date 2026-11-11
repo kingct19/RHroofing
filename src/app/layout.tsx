@@ -11,7 +11,7 @@ const inter = Inter({
 
 const display = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   variable: "--font-display-next",
   display: "swap",
 });

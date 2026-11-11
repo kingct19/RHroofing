@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone } from "lucide-react";
@@ -98,11 +99,17 @@ export default async function CityServiceAreaPage({ params }: CityPageProps) {
 
           {city.photo ? (
             <figure className="mt-8">
-              <img
-                src={city.photo}
-                alt={city.photoAlt}
-                className="aspect-[16/9] w-full object-cover"
-              />
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#e7ebea]">
+                <Image
+                  src={city.photo}
+                  alt={city.photoAlt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 760px, 100vw"
+                  quality={80}
+                  className="object-cover"
+                />
+              </div>
               {city.photoCredit ? (
                 <figcaption className="mt-2 text-sm text-[#5c5c5c]">
                   Photo:{" "}

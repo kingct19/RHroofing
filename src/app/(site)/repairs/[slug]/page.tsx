@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone } from "lucide-react";
@@ -95,11 +96,17 @@ export default async function RepairDetailPage({ params }: RepairPageProps) {
                 </a>
               </div>
             </div>
-            <img
-              src={page.imageUrl}
-              alt={`${page.title} by Raymond Hardin Roofing`}
-              className="aspect-[4/3] w-full object-cover"
-            />
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e7ebea]">
+              <Image
+                src={page.imageUrl}
+                alt={`${page.title} by Raymond Hardin Roofing`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 400px, 100vw"
+                quality={80}
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {page.sections.map((section) => (
