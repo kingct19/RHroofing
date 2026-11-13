@@ -11,7 +11,7 @@ export function GET() {
   const lines: string[] = [
     `# ${COMPANY_INFO.name}`,
     "",
-    `> Family-owned East Texas roofing contractor based in ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} (${COMPANY_INFO.headquarters.county}) since ${COMPANY_INFO.foundedYear}. Over ${COMPANY_INFO.experienceYears} years of hands-on residential and commercial roofing experience. Free same-day and next-day roof inspections, licensed, bonded, insured, and BBB Accredited (A+).`,
+    `> Family-owned East Texas roofing contractor based in ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} (${COMPANY_INFO.headquarters.county}) since ${COMPANY_INFO.foundedYear}. Raymond has ${COMPANY_INFO.experienceYears}+ years of hands-on residential and commercial roofing experience. Free same-day and next-day roof inspections, licensed, bonded, insured, and BBB Accredited (A+).`,
     "",
     "## Contact & Hours",
     "",
