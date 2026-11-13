@@ -80,7 +80,7 @@ export default config({
         }),
         experienceYears: fields.integer({
           label: "Years of experience",
-          description: "Used where the site says 40+ years.",
+          description: "Used where the site describes Raymond's 38+ years of experience.",
           validation: { isRequired: true, min: 0 },
         }),
         startedAge: fields.integer({
@@ -95,7 +95,7 @@ export default config({
         domain: requiredText("Website", "Include https://"),
         headquarters: fields.object(
           {
-            street: requiredText("Street address", "Example: 1217 Old Enon Rd"),
+            street: requiredText("Street address", "Example: 1217 Buffalo Rd"),
             city: requiredText("City"),
             county: requiredText("County"),
             state: requiredText("State abbreviation"),
@@ -121,7 +121,7 @@ export default config({
           },
           {
             label: "Hours",
-            description: "The last line is for Google. It looks like Mo-Sa 07:00-18:00. Leave it unless the hours change.",
+            description: "The last line is for Google. It looks like Mo-Sa 07:00-17:00. Leave it unless the hours change.",
           },
         ),
         corePromise: requiredMultiline("About summary"),
