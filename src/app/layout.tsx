@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | Raymond Hardin Roofing",
   },
   description:
-    `Based at ${COMPANY_INFO.headquarters.street} in Gilmer, TX since 1995, Raymond Hardin Roofing provides free roof inspections, shingle, metal, and torch-down flat roofs across East Texas. Call ${COMPANY_INFO.phoneDisplay}.`,
+    `Based at ${COMPANY_INFO.headquarters.street}, ${COMPANY_INFO.headquarters.city}, ${COMPANY_INFO.headquarters.state} ${COMPANY_INFO.headquarters.zip} since 1995, Raymond Hardin Roofing provides free roof inspections, shingle, metal, and torch-down flat roofs across East Texas. Call ${COMPANY_INFO.phoneDisplay}.`,
   keywords: [
     "Raymond Hardin Roofing",
     "Gilmer TX roofer",

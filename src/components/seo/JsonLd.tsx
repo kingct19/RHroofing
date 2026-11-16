@@ -67,6 +67,7 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
       postalCode: COMPANY_INFO.headquarters.zip,
       addressCountry: "US",
     },
+    // TODO: Replace these existing coordinates once Buffalo Rd coordinates are verified.
     geo: {
       "@type": "GeoCoordinates",
       latitude: COMPANY_INFO.headquarters.latitude,
@@ -87,7 +88,7 @@ export function buildLocalBusinessSchema(cityOverride?: ServiceAreaCity) {
           "Saturday",
         ],
         opens: "07:00",
-        closes: "18:00",
+        closes: "17:00",
       },
     ],
     areaServed: [...areaServedCities, ...areaServedCounties],

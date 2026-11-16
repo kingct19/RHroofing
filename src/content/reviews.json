@@ -23,17 +23,6 @@
       "quote": "Amazing company. Whole crew did an amazing job on our new roof. Definitely recommend!!"
     },
     {
-      "id": "google-donald-dunn",
-      "author": "Donald Dunn",
-      "town": "",
-      "county": "",
-      "serviceProvided": "",
-      "rating": 4,
-      "date": "7 years ago",
-      "highlight": "",
-      "quote": "The number shown here is the Sheriif Office Could not find a phone #"
-    },
-    {
       "id": "google-kenneth-mccoy",
       "author": "Kenneth McCoy",
       "town": "",
@@ -159,7 +148,7 @@
   ],
   "title": "Real customers. Real experiences.",
   "moreLabel": "More reviews",
-  "googleReviewsUrl": "https://www.google.com/maps/search/?api=1&query=Raymond+Hardin+Roofing+Co+Gilmer+TX",
+  "googleReviewsUrl": "https://maps.google.com/?q=1217%20Buffalo%20Rd%2C%20Gilmer%2C%20TX%2075644",
   "googleReviewUrl": "https://g.page/r/CZd3eVWY0G6fEAE/review",
   "googleReviewQrUrl": "https://g.page/r/CZd3eVWY0G6fEAE/review?utm_source=gbp&utm_medium=reviews&utm_campaign=qr"
 }

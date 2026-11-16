@@ -136,9 +136,9 @@ export default function ContactPage() {
                         {contact.locationLabel}
                       </div>
                       <div className="text-xs text-limestone/75 mt-0.5">
-                        {COMPANY_INFO.headquarters.street}
+                        {COMPANY_INFO.headquarters.street}, {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip}
                         <br />
-                        {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state} {COMPANY_INFO.headquarters.zip} ({COMPANY_INFO.headquarters.county})
+                        ({COMPANY_INFO.headquarters.county})
                       </div>
                     </div>
                   </div>
