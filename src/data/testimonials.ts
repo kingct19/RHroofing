@@ -20,7 +20,7 @@ export const GOOGLE_REVIEW_QR_URL = reviewsContent.googleReviewQrUrl;
 export const GOOGLE_REVIEWS = reviewsContent.reviews satisfies CustomerReview[];
 export const EAST_TEXAS_REVIEWS = reviewsContent.eastTexasReviews satisfies CustomerReview[];
 
-export const GOOGLE_REVIEW_SUMMARY = "4.8 on Google";
+export const GOOGLE_REVIEW_SUMMARY = "4.6 from 8 Google reviews";
 
 export const ALL_GALLERY_PHOTOS: {
   src: string;
